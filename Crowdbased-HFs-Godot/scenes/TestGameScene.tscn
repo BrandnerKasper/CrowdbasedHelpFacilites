@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/textures/player_default.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Enhanced Tool-Tip.tscn" type="PackedScene" id=2]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,5 +14,11 @@ animations = [ {
 [node name="TestGameScene" type="Node"]
 
 [node name="Player" type="AnimatedSprite" parent="."]
-position = Vector2( 485, 294 )
+position = Vector2( 485, 295.122 )
 frames = SubResource( 1 )
+
+[node name="Enhanced_Tool-Tip" parent="." instance=ExtResource( 2 )]
+margin_left = 640.926
+margin_top = 72.96
+margin_right = 1536.93
+margin_bottom = 552.96
