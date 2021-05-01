@@ -1,0 +1,262 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/fonts/Work_Sans/WorkSans-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Dynamic_Font/Enhanced_Tool-Tip/Enhanced Tool-Tip_Normal_Text.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_DisLike.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Video_Button.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Blog_Button.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_DisLike.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Blog_Button.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Blog_Button.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Like.png" type="Texture" id=9]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Like.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/DisLike.png" type="Texture" id=11]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Video_Button.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Video_Button.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Like.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/E_TT_Body.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 15 )
+region_rect = Rect2( 0, 0, 593, 254 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=3]
+color = Color( 0.72549, 0.72549, 0.72549, 1 )
+thickness = 2
+
+[node name="Control" type="Control"]
+margin_right = 536.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_top = 4.0
+margin_right = 536.0
+margin_bottom = 241.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Base-Margin" type="MarginContainer" parent="PanelContainer"]
+margin_right = 536.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base-Container" type="VBoxContainer" parent="PanelContainer/Base-Margin"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 526.0
+margin_bottom = 227.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title-Container" type="VBoxContainer" parent="PanelContainer/Base-Margin/Base-Container"]
+margin_right = 516.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/Base-Margin/Base-Container/Title-Container"]
+margin_right = 516.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+
+[node name="Title2" type="Label" parent="PanelContainer/Base-Margin/Base-Container/Title-Container/CenterContainer"]
+margin_left = 94.0
+margin_right = 422.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
+text = "Title of Game Object"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title Line" type="HSeparator" parent="PanelContainer/Base-Margin/Base-Container"]
+margin_top = 42.0
+margin_right = 516.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/separator = SubResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container"]
+margin_top = 50.0
+margin_right = 516.0
+margin_bottom = 176.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_bottom = 10
+
+[node name="Body-Container2" type="HBoxContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer"]
+margin_right = 516.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2"]
+margin_right = 117.0
+margin_bottom = 116.0
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_left = 20
+
+[node name="Button_Container" type="VBoxContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/MarginContainer"]
+margin_left = 20.0
+margin_right = 77.0
+margin_bottom = 116.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/MarginContainer/Button_Container"]
+margin_right = 57.0
+margin_bottom = 70.0
+custom_constants/margin_bottom = 10
+
+[node name="Blog_Button" type="TextureButton" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/MarginContainer/Button_Container/MarginContainer"]
+margin_right = 57.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/MarginContainer/Button_Container"]
+margin_top = 74.0
+margin_right = 57.0
+margin_bottom = 116.0
+
+[node name="Video_Button" type="TextureButton" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/MarginContainer/Button_Container/MarginContainer2"]
+margin_right = 57.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2"]
+margin_left = 121.0
+margin_right = 516.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text_Body" type="Label" parent="PanelContainer/Base-Margin/Base-Container/MarginContainer/Body-Container2/ScrollContainer"]
+margin_right = 383.0
+margin_bottom = 237.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/Base-Margin/Base-Container"]
+margin_top = 180.0
+margin_right = 516.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+
+[node name="Like_Container2" type="HBoxContainer" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer"]
+margin_left = 153.0
+margin_right = 362.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2"]
+margin_right = 107.0
+margin_bottom = 37.0
+custom_constants/margin_right = 50
+
+[node name="Like" type="HBoxContainer" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer"]
+margin_right = 57.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Like_Button" type="TextureButton" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer/Like"]
+margin_right = 33.0
+margin_bottom = 37.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Like_Number" type="Label" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer/Like"]
+margin_left = 37.0
+margin_top = 5.0
+margin_right = 57.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.27451, 0.992157, 0.517647, 1 )
+custom_colors/font_outline_modulate = Color( 0.27451, 0.992157, 0.517647, 1 )
+text = "12"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2"]
+margin_left = 111.0
+margin_right = 209.0
+margin_bottom = 37.0
+custom_constants/margin_top = 0
+custom_constants/margin_left = 50
+
+[node name="DisLike" type="HBoxContainer" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer2"]
+margin_left = 50.0
+margin_right = 98.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisLike_Button" type="TextureButton" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer2/DisLike"]
+margin_right = 33.0
+margin_bottom = 37.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
+
+[node name="DisLike_Number" type="Label" parent="PanelContainer/Base-Margin/Base-Container/CenterContainer/Like_Container2/MarginContainer2/DisLike"]
+margin_left = 37.0
+margin_top = 5.0
+margin_right = 48.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.909804, 0.541176, 0.270588, 1 )
+custom_colors/font_outline_modulate = Color( 0.909804, 0.541176, 0.270588, 1 )
+text = "7"
