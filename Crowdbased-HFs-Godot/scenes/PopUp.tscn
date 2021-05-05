@@ -1,0 +1,288 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://assets/fonts/Work_Sans/WorkSans-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/PopUp.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/Dynamic_Font/Enhanced_Tool-Tip/Enhanced Tool-Tip_Normal_Text.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Like.png" type="Texture" id=4]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Blog_Button.png" type="Texture" id=5]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Blog_Button.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Like.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/DisLike.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_Video_Button.png" type="Texture" id=9]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Video_Button.png" type="Texture" id=10]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Video_Button.png" type="Texture" id=11]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/E_TT_Body.png" type="Texture" id=12]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_DisLike.png" type="Texture" id=13]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Like.png" type="Texture" id=14]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Pressed_Blog_Button.png" type="Texture" id=15]
+[ext_resource path="res://assets/textures/Enhanced_Tool-Tip/Hovered_DisLike.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0.72549, 0.72549, 0.72549, 1 )
+thickness = 2
+
+[node name="PopUp" type="Popup"]
+visible = true
+margin_right = 600.0
+margin_bottom = 260.0
+rect_min_size = Vector2( 600, 260 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+body_text = "ahfklahikfghahgkiahkighkiaskgihaikhgiahighiahgihailhgilasgilkhskilhgikahsighkisahgisakihgkaihgkahkghakigiahighaihgiahgihasikghahgkiahikghsakighaksihgkiaskgihasikhgikasikghasikhgiksahgf"
+
+[node name="Nine" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base-M" type="MarginContainer" parent="Nine"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base-C" type="VBoxContainer" parent="Nine/Base-M"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 590.0
+margin_bottom = 250.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title-C" type="VBoxContainer" parent="Nine/Base-M/Base-C"]
+margin_right = 580.0
+margin_bottom = 69.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title-Center" type="CenterContainer" parent="Nine/Base-M/Base-C/Title-C"]
+margin_right = 580.0
+margin_bottom = 38.0
+mouse_filter = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="Nine/Base-M/Base-C/Title-C/Title-Center"]
+margin_left = 126.0
+margin_right = 454.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Title of Game Object"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title Line" type="HSeparator" parent="Nine/Base-M/Base-C"]
+visible = false
+margin_right = 580.0
+margin_bottom = 110.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/separator = SubResource( 2 )
+
+[node name="Body-M" type="MarginContainer" parent="Nine/Base-M/Base-C"]
+margin_top = 73.0
+margin_right = 580.0
+margin_bottom = 199.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_bottom = 10
+
+[node name="Body-C" type="HBoxContainer" parent="Nine/Base-M/Base-C/Body-M"]
+margin_right = 580.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button-M" type="MarginContainer" parent="Nine/Base-M/Base-C/Body-M/Body-C"]
+margin_right = 117.0
+margin_bottom = 116.0
+mouse_filter = 1
+size_flags_vertical = 3
+custom_constants/margin_right = 40
+custom_constants/margin_left = 20
+
+[node name="Button_C" type="VBoxContainer" parent="Nine/Base-M/Base-C/Body-M/Body-C/Button-M"]
+margin_left = 20.0
+margin_right = 77.0
+margin_bottom = 116.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Block-M" type="MarginContainer" parent="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C"]
+margin_right = 57.0
+margin_bottom = 70.0
+mouse_filter = 1
+custom_constants/margin_bottom = 10
+
+[node name="Blog_Button" type="TextureButton" parent="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Block-M"]
+margin_right = 57.0
+margin_bottom = 60.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video-M" type="MarginContainer" parent="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C"]
+margin_top = 74.0
+margin_right = 57.0
+margin_bottom = 116.0
+mouse_filter = 1
+
+[node name="Video_Button" type="TextureButton" parent="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Video-M"]
+margin_right = 57.0
+margin_bottom = 42.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scroll-C" type="ScrollContainer" parent="Nine/Base-M/Base-C/Body-M/Body-C"]
+margin_left = 121.0
+margin_right = 580.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text_Body" type="Label" parent="Nine/Base-M/Base-C/Body-M/Body-C/Scroll-C"]
+margin_top = 44.0
+margin_right = 459.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Default Text"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rating-Center" type="CenterContainer" parent="Nine/Base-M/Base-C"]
+margin_top = 203.0
+margin_right = 580.0
+margin_bottom = 240.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="Rating-C" type="HBoxContainer" parent="Nine/Base-M/Base-C/Rating-Center"]
+margin_left = 190.0
+margin_right = 390.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rating-M" type="MarginContainer" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C"]
+margin_right = 98.0
+margin_bottom = 37.0
+mouse_filter = 1
+custom_constants/margin_right = 50
+
+[node name="Like-C" type="HBoxContainer" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/Rating-M"]
+margin_right = 48.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Like_Button" type="TextureButton" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/Rating-M/Like-C"]
+margin_right = 33.0
+margin_bottom = 37.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Like_Number" type="Label" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/Rating-M/Like-C"]
+margin_left = 37.0
+margin_top = 5.0
+margin_right = 48.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.27451, 0.992157, 0.517647, 1 )
+custom_colors/font_outline_modulate = Color( 0.27451, 0.992157, 0.517647, 1 )
+text = "0"
+
+[node name="DisLike-M" type="MarginContainer" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C"]
+margin_left = 102.0
+margin_right = 200.0
+margin_bottom = 37.0
+mouse_filter = 1
+custom_constants/margin_top = 0
+custom_constants/margin_left = 50
+
+[node name="DisLike-C" type="HBoxContainer" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M"]
+margin_left = 50.0
+margin_right = 98.0
+margin_bottom = 37.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisLike_Button" type="TextureButton" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M/DisLike-C"]
+margin_right = 33.0
+margin_bottom = 37.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 16 )
+
+[node name="DisLike_Number" type="Label" parent="Nine/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M/DisLike-C"]
+margin_left = 37.0
+margin_top = 5.0
+margin_right = 48.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.909804, 0.541176, 0.270588, 1 )
+custom_colors/font_outline_modulate = Color( 0.909804, 0.541176, 0.270588, 1 )
+text = "0"
+[connection signal="mouse_entered" from="." to="." method="_on_PopUp_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_PopUp_mouse_exited"]
+[connection signal="pressed" from="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Block-M/Blog_Button" to="." method="_on_Blog_Button_pressed"]
+[connection signal="pressed" from="Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Video-M/Video_Button" to="." method="_on_Video_Button_pressed"]
+[connection signal="pressed" from="Nine/Base-M/Base-C/Rating-Center/Rating-C/Rating-M/Like-C/Like_Button" to="." method="_on_Like_Button_pressed"]
+[connection signal="pressed" from="Nine/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M/DisLike-C/DisLike_Button" to="." method="_on_DisLike_Button_pressed"]

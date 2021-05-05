@@ -17,11 +17,11 @@
 [ext_resource path="res://assets/textures/Enhanced_Tool-Tip/E_TT_Body.png" type="Texture" id=15]
 [ext_resource path="res://scripts/Enhanced_Tool-Tip.gd" type="Script" id=16]
 
-[sub_resource type="StyleBoxTexture" id=4]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 15 )
 region_rect = Rect2( 0, 0, 593, 254 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
@@ -41,7 +41,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 16 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Base" type="PanelContainer" parent="."]
@@ -49,7 +49,7 @@ margin_right = 536.0
 margin_bottom = 237.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="Base-M" type="MarginContainer" parent="Base"]
 margin_right = 536.0
@@ -90,8 +90,9 @@ size_flags_horizontal = 3
 margin_left = 94.0
 margin_right = 422.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Title of Game Object"
 align = 1
 __meta__ = {
@@ -183,6 +184,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Default Text"
 autowrap = true
 __meta__ = {
