@@ -9,7 +9,7 @@ A Tool-Tip normally consists of a short description of a item the user is hoveri
 Here is a UI Mockup.
 
 ![Enhanced Tool-Tip with Color](Documentation/ToolTip_Prototype_w_C.png) 
-*Mockup of the Enhanced Tool-Tip with Color*
+*Mockup of the Enhanced Tool-Tip with a Blog and Video Button in Color*
 
 
 # Crowdbased Tip of the Day (ToD)
