@@ -10,6 +10,7 @@ var mouse_hovered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#print("PopUp ready")
 	pass
 
 
@@ -66,12 +67,12 @@ func _on_DisLike_Button_pressed():
 # Handle visibility of Tool-Tip PopUp 
 func _on_PopUp_mouse_entered():
 	mouse_hovered = true
-	print("entered: ", mouse_hovered)
+	#print("entered: ", mouse_hovered)
 
 func _on_PopUp_mouse_exited():
 	if(_should_PopUp_hide()):
 		mouse_hovered = false
-		print("exited: ", mouse_hovered)
+		#print("exited: ", mouse_hovered)
 
 func _should_PopUp_hide():
 	var should_PopUp_hide = false

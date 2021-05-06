@@ -1,66 +1,70 @@
-#tool
 extends Control
 
-# maybe get parent name as title?
+class_name Enhanced_Tool_Tip, "res://icon/Enhanced_Tool-Tip_Icon.svg"
+
+onready var tool_tip = preload("res://scenes/PopUp.tscn") 
 
 # Editor variables
-export var title = "Title of Game Object"
-export var body_text = "Default Text"
+export(String, MULTILINE) var body_text = ""
 export var blog_button_url = "http://godotengine.org"
 export var video_button_url = "https://www.youtube.com/watch?v=42HKCFf5Lf4"
 
 # Variables
-var like = 0
-var dislike = 0
+var control_width
+var control_height
+var tool_tip_instance
+var tool_tip_offset
+var show = false
 
-# Called when the node enters the scene tree for the first time.
+
+# Initialize tool-tip position and content
 func _ready():
-	pass
+	#print("Enhanced Tool-Tip ready!")
+	var _mouse_entered = self.connect("mouse_entered", self, "_on_Control_mouse_entered")
+	var _mouse_exited = self.connect("mouse_exited", self, "_on_Control_mouse_exited")
+	self.set_anchors_and_margins_preset(PRESET_WIDE)
+	_init_tool_tip()
+	_set_tool_tip_variables()
+	
+	
+func _init_tool_tip():
+	control_width = get_parent_area_size().x
+	control_height = get_parent_area_size().y
+	#print("width: ", control_width, " height: ", control_height)
 
+	tool_tip_instance = tool_tip.instance()
+	
+	tool_tip_offset = Vector2(-control_width + control_width/5,  tool_tip_instance.rect_size.y)
+	tool_tip_instance.rect_position = get_global_transform_with_canvas().origin - tool_tip_offset
+	
+	add_child(tool_tip_instance)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _set_tool_tip_variables():
+	tool_tip_instance._set_Title(get_parent().get_name())
+	# Use the Editor Description of the parent node if there is one
+	if(body_text.empty()):
+		body_text = get_parent().editor_description
+	tool_tip_instance._set_Body_Text(body_text)
+	tool_tip_instance._set_Blog_URL(blog_button_url)
+	tool_tip_instance._set_Video_URL(video_button_url)
+
+# Handle visibility of tool-tip
 func _process(_delta):
-	_handle_Title_changed()
-	_handle_Body_Text_changed()
-	_handle_Like_Number_Changed()
-	_handle_DisLike_Number_Changed()
-	#if Engine.editor_hint:
-		#print("Now print while in editor")
+	#print("show: ", show)
+	
+	if(tool_tip_instance.mouse_hovered or show):
+		#print("tool: ",  tool_tip_instance.mouse_hovered)
+		yield(get_tree().create_timer(0.7), "timeout")
+		if has_node("PopUp"):
+			$"PopUp".show()
+	else:
+		yield(get_tree().create_timer(0.3), "timeout")
+		if has_node("PopUp"):
+			$"PopUp".hide()
 
 
-func _handle_Title_changed():
-	$"Base/Base-M/Base-C/Title-C/Title-Center/Title".text = title
+func _on_Control_mouse_entered():
+	show = true
 
-
-func _handle_Body_Text_changed():
-	$"Base/Base-M/Base-C/Body-M/Body-C/Scroll-C/Text_Body".text = body_text
-
-
-func _handle_Like_Number_Changed():
-	$"Base/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M/DisLike-C/DisLike_Number".text = String(dislike)
-
-func _handle_DisLike_Number_Changed():
-	$"Base/Base-M/Base-C/Rating-Center/Rating-C/Rating-M/Like-C/Like_Number".text = String(like)
-
-func _on_Blog_Button_pressed():
-	print("Blog Button pressed.")
-	var _open_blog = OS.shell_open(blog_button_url)
-	if(_open_blog != 0):
-		print("No valid path")
-
-
-func _on_Video_Button_pressed():
-	print("Video Button pressed.")
-	var _open_video = OS.shell_open(video_button_url)
-	if(_open_video != 0):
-		print("No valid path")
-
-
-func _on_Like_Button_pressed():
-	print("Like Button pressed.")
-	like += 1
-
-
-func _on_DisLike_Button_pressed():
-	print("DisLike Button pressed.")
-	dislike += 1
+func _on_Control_mouse_exited():
+	show = false
