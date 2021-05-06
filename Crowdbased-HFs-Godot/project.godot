@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="CrowdbasedHelpFacilities"
+run/main_scene="res://scenes/TestGameScene.tscn"
 config/icon="res://icon/icon.png"
 
 [rendering]

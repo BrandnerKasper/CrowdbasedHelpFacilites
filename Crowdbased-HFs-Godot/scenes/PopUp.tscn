@@ -27,7 +27,6 @@ color = Color( 0.72549, 0.72549, 0.72549, 1 )
 thickness = 2
 
 [node name="PopUp" type="Popup"]
-visible = true
 margin_right = 600.0
 margin_bottom = 260.0
 rect_min_size = Vector2( 600, 260 )
@@ -37,7 +36,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-body_text = "ahfklahikfghahgkiahkighkiaskgihaikhgiahighiahgihailhgilasgilkhskilhgikahsighkisahgisakihgkaihgkahkghakigiahighaihgiahgihasikghahgkiahikghsakighaksihgkiaskgihasikhgikasikghasikhgiksahgf"
 
 [node name="Nine" type="NinePatchRect" parent="."]
 anchor_right = 1.0
@@ -77,7 +75,7 @@ __meta__ = {
 
 [node name="Title-C" type="VBoxContainer" parent="Nine/Base-M/Base-C"]
 margin_right = 580.0
-margin_bottom = 69.0
+margin_bottom = 38.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -89,22 +87,22 @@ mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="Title" type="Label" parent="Nine/Base-M/Base-C/Title-C/Title-Center"]
-margin_left = 126.0
-margin_right = 454.0
+margin_left = 107.0
+margin_right = 473.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.792157, 0.792157, 0.792157, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Title of Game Object"
+text = "<Title of Game Object>"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title Line" type="HSeparator" parent="Nine/Base-M/Base-C"]
-visible = false
+margin_top = 42.0
 margin_right = 580.0
-margin_bottom = 110.0
+margin_bottom = 69.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -192,7 +190,7 @@ size_flags_vertical = 6
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.768627, 0.768627, 0.768627, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "Default Text"
+text = "<Default Text>"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

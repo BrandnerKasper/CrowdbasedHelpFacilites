@@ -13,11 +13,11 @@ animations = [ {
 
 [node name="TestGameScene" type="Node"]
 
-[node name="Player" type="AnimatedSprite" parent="."]
-position = Vector2( 488.564, 279.111 )
+[node name="Player_2D" type="AnimatedSprite" parent="."]
+position = Vector2( 335.057, 365.876 )
 frames = SubResource( 1 )
 
-[node name="Control" type="Control" parent="Player"]
+[node name="Control" type="Control" parent="Player_2D"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -54.0
@@ -32,5 +32,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 body_text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea"
-[connection signal="mouse_entered" from="Player/Control" to="Player/Control" method="_on_Control_mouse_entered"]
-[connection signal="mouse_exited" from="Player/Control" to="Player/Control" method="_on_Control_mouse_exited"]
+[connection signal="mouse_entered" from="Player_2D/Control" to="Player_2D/Control" method="_on_Control_mouse_entered"]
+[connection signal="mouse_exited" from="Player_2D/Control" to="Player_2D/Control" method="_on_Control_mouse_exited"]
