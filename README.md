@@ -8,12 +8,17 @@ A Tool-Tip normally consists of a short description of a item the user is hoveri
 
 Here is a UI Mockup.
 
-![Enhanced Tool-Tip with Color](Documentation/ToolTip_Prototype_w_C.png) 
-*Mockup of the Enhanced Tool-Tip with Color*
+| ![Enhanced Tool-Tip with Color](Documentation/ToolTip_Prototype_w_C.png)  | 
+|:--:| 
+| *Mockup of the Enhanced Tool-Tip with a Blog and Video Button in Color* |
 
 
 # Crowdbased Tip of the Day (ToD)
 A ToD is typically a Pop-Up window displayed when the software starts. It contains a tip for the user, explaining an advanced feature to improve the understanding of the software. I extend the ToD to support the involvement of the crowd, enabling them to commit their own tip and ratetips of others, as well as the recommendation of tips.
 
-![Crowdbased Tip of the Day with Color](Documentation/ToDwColor.png) 
-*Mockup of the Crowdbased Tip of the Day with Color*
+| ![Crowdbased Tip of the Day with Color](Documentation/ToDwColor.png) |
+|:--:| 
+| *Mockup of the Crowdbased Tip of the Day with Color* |
+
+# Implementation
+Both ideas are implemented in the [Godot Engine](https://godotengine.org/) as an Editor Plugin.
