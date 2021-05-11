@@ -8,14 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Control",
-"class": "Enhanced_Tool_Tip",
-"language": "GDScript",
-"path": "res://scripts/Enhanced_Tool-Tip.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"Enhanced_Tool_Tip": "res://icon/Enhanced_Tool-Tip_Icon.svg"
+
 }
 
 [application]
@@ -28,6 +23,10 @@ config/icon="res://icon/icon.png"
 
 window/size/width=1920
 window/size/height=1080
+
+[editor_plugins]
+
+enabled=PoolStringArray( "enhanced_tool-tip" )
 
 [rendering]
 
