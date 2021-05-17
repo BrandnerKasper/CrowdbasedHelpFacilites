@@ -10,6 +10,11 @@ var mouse_hovered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
 	_handle_Like_Number_Changed()
 	_handle_DisLike_Number_Changed()
 
@@ -22,10 +27,18 @@ func _set_Body_Text(body_text):
 	$"Nine/Base-M/Base-C/Body-M/Body-C/Scroll-C/Text_Body".text = body_text
 
 func _set_Blog_URL(url):
-	blog_url = url
+	if(url.empty()):
+		$"Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Block-M/Blog_Button".visible = false
+	else:
+		$"Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Block-M/Blog_Button".visible = true
+		blog_url = url
 
 func _set_Video_URL(url):
-	video_url = url
+	if(url.empty()):
+		$"Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Video-M/Video_Button".visible = false
+	else:
+		$"Nine/Base-M/Base-C/Body-M/Body-C/Button-M/Button_C/Video-M/Video_Button".visible = true
+		video_url = url
 
 func _handle_Like_Number_Changed():
 	$"Nine/Base-M/Base-C/Rating-Center/Rating-C/DisLike-M/DisLike-C/DisLike_Number".text = String(dislike)

@@ -29,9 +29,16 @@ body_text = "One Button example"
 blog_button_url = ""
 
 [node name="Another Player" type="AnimatedSprite" parent="."]
-visible = false
 position = Vector2( 248.218, 516.017 )
 frames = SubResource( 1 )
+
+[node name="Enhanced_Tool-Tip" type="Control" parent="Another Player"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 956.917
