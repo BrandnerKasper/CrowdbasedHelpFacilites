@@ -26,7 +26,7 @@ window/size/height=1080
 
 [editor_plugins]
 
-enabled=PoolStringArray( "enhanced_tool-tip" )
+enabled=PoolStringArray( "Community_ToD", "enhanced_tool-tip" )
 
 [rendering]
 
