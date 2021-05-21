@@ -1,16 +1,18 @@
 tool
 extends EditorPlugin
 
-const Community_ToD = preload("res://scenes/Center_ToD.tscn")
+const Community_ToD = preload("res://scenes/ToD.tscn")
+const icon = preload("res://icon/cloud.svg")
 
 var community_ToD_instance
+
+var Community_ToD_Viewport
 
 
 func _enter_tree():
 	community_ToD_instance = Community_ToD.instance()
 	
-	get_editor_interface().get_editor_viewport().add_child(community_ToD_instance)
-	
+	Community_ToD_Viewport = get_editor_interface().get_editor_viewport().add_child(community_ToD_instance)
 	make_visible(false)
 
 
@@ -33,4 +35,5 @@ func get_plugin_name():
 
 
 func get_plugin_icon():
-	return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
+	return icon
+	#return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons")
