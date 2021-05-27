@@ -1,8 +1,8 @@
 tool
 extends EditorPlugin
 
-const Community_ToD = preload("res://scenes/ToD.tscn")
-const icon = preload("res://icon/cloud.svg")
+const Community_ToD = preload("res://addons/Community_ToD/ToD.tscn")
+const icon = preload("res://addons/Community_ToD/cloud.svg")
 
 var community_ToD_instance
 

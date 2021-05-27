@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/textures/player_default.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/misc/player_default.png" type="Texture" id=1]
 [ext_resource path="res://addons/enhanced_tool-tip/Enhanced_Tool-Tip.gd" type="Script" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
