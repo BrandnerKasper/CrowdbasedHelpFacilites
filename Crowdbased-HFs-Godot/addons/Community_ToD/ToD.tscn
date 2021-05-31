@@ -180,18 +180,20 @@ __meta__ = {
 [node name="Text_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 57.0
 margin_right = 981.0
-margin_bottom = 368.0
+margin_bottom = 379.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="Button_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
 margin_right = 224.0
-margin_bottom = 311.0
+margin_bottom = 322.0
 custom_constants/margin_right = 50
 custom_constants/margin_left = 80
 
 [node name="Button_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M"]
 margin_left = 80.0
 margin_right = 174.0
-margin_bottom = 311.0
+margin_bottom = 322.0
 
 [node name="Block_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
 margin_right = 94.0
@@ -225,7 +227,7 @@ texture_hover = ExtResource( 4 )
 [node name="ScrollContainer" type="ScrollContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
 margin_left = 228.0
 margin_right = 981.0
-margin_bottom = 311.0
+margin_bottom = 322.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -254,9 +256,9 @@ text = "<More Default Text. More Default Text. More Default Text. More Default T
 autowrap = true
 
 [node name="Down_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
-margin_top = 372.0
+margin_top = 383.0
 margin_right = 981.0
-margin_bottom = 487.0
+margin_bottom = 498.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 custom_constants/margin_top = 30
@@ -478,6 +480,7 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Root/Outer_Rect/X_M/X_Button" to="Root" method="_on_X_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M/Block_Button" to="Root" method="_on_Block_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M/Video_Button" to="Root" method="_on_Video_Button_pressed"]
@@ -485,6 +488,5 @@ __meta__ = {
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M/Next_Button" to="Root" method="_on_Next_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/Like_Button" to="Root" method="_on_Like_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/DisLike_Button" to="Root" method="_on_DisLike_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button" to="." method="_on_Upload_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button" to="Root" method="_on_Upload_Button_pressed"]
 [connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M/Close_Button" to="Root" method="_on_Close_Button_pressed"]
