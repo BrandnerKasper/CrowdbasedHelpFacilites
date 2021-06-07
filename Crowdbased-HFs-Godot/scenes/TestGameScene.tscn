@@ -25,8 +25,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-body_text = "One Button example"
-blog_button_url = ""
+body_text = "This is an example 2D player. He moves in 2D-space using the arrow keys. He is animated through the Sprite Frames system"
+blog_button_url = "https://docs.godotengine.org/en/stable/getting_started/step_by_step/your_first_game.html"
 
 [node name="Another Player" type="AnimatedSprite" parent="."]
 position = Vector2( 248.218, 516.017 )
@@ -60,10 +60,10 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="."]
-margin_left = 461.648
-margin_top = 708.451
-margin_right = 500.648
-margin_bottom = 748.451
+margin_left = 388.628
+margin_top = 852.904
+margin_right = 427.628
+margin_bottom = 892.904
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": "This is a test panel, which text is shown when hovering in the scene hierachy"
@@ -73,6 +73,3 @@ __meta__ = {
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
-body_text = "a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. a lot of text. "
-blog_button_url = ""
-video_button_url = ""

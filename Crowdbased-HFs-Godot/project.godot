@@ -25,7 +25,7 @@ window/size/height=1080
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/Community_ToD/plugin.cfg", "res://addons/enhanced_tool-tip/plugin.cfg", "res://addons/godot-plugin-refresher/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/Community_ToD/plugin.cfg", "res://addons/enhanced_tool-tip/plugin.cfg", "res://addons/godot-plugin-refresher/plugin.cfg", "res://addons/godot-sqlite/plugin.cfg" )
 
 [rendering]
 

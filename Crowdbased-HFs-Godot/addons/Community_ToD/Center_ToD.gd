@@ -16,8 +16,12 @@ var blog_url : String
 var video_url : String
 
 func _ready():
+	#var unix = OS.get_unix_time()
+	#print("Unix Time right know is: " + str(unix))
+	
 	#commit_Data_to_DB()
 	tod_list = get_List_of_ToDs()
+	rank_List_of_ToDs()
 	get_ToD()
 	set_ToD()
 	#read_from_DB()
@@ -47,7 +51,7 @@ func read_from_DB():
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	var tableName = "ToD"
+	var tableName = "SQLiteTable"
 	db.query("select * from " + tableName + ";")
 	tod_list = db.query_result
 
@@ -56,13 +60,34 @@ func get_List_of_ToDs():
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	db.query("SELECT ToD.Title as Title, ToD.Body_Text as Body, ToD.Blog_URL as Blog, ToD.Video_URL as Video , ToD.Like_Count as Like, ToD.DisLike_Count as DisLike from ToD")
+	db.query("SELECT ToD.Title as Title, ToD.Body_Text as Body, ToD.Blog_URL as Blog, ToD.Video_URL as Video," +
+				"ToD.Like_Count as Like, ToD.DisLike_Count as DisLike, ToD.Unix_Timestamp as Timestamp from ToD")
 	return db.query_result
 
 
 func get_ToD():
 	#sort tod_list by algo!
 	tod = tod_list[counter]
+
+
+func rank_List_of_ToDs():
+	#calculate score for every tip in List of ToDs
+	var current_unix_time = OS.get_unix_time()
+	for i in range(0, tod_list.size()):
+		var time_stamp_in_days = ((current_unix_time - tod_list[i].Timestamp) / 3600) / 24
+		var votes = tod_list[i].Like - tod_list[i].DisLike
+		var score = votes - time_stamp_in_days
+		tod_list[i]["Score"] = score
+
+	#sort Array tod_list
+	tod_list.sort_custom(self, "rank_ToDs")
+	pass
+
+
+func rank_ToDs(tip_1 : Dictionary, tip_2 : Dictionary):
+	if(tip_1["Score"] > tip_2["Score"]):
+		return true
+	return false
 
 
 func set_ToD():
