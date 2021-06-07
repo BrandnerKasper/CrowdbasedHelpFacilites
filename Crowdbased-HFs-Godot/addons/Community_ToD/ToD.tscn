@@ -129,7 +129,7 @@ __meta__ = {
 }
 
 [node name="Inner_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect"]
-margin_right = 991.0
+margin_right = 995.0
 margin_bottom = 508.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
@@ -142,34 +142,34 @@ __meta__ = {
 [node name="Body_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M"]
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 986.0
+margin_right = 990.0
 margin_bottom = 503.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Title_C" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
-margin_right = 981.0
+margin_right = 985.0
 margin_bottom = 45.0
 
 [node name="Title" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C"]
-margin_left = 208.0
-margin_right = 773.0
+margin_left = 373.0
+margin_right = 611.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 31 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "<Default Title of your Tip of the Day>"
+text = "Very high Score"
 
 [node name="Seperator_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 49.0
-margin_right = 981.0
+margin_right = 985.0
 margin_bottom = 53.0
 custom_constants/margin_right = 40
 custom_constants/margin_left = 40
 
 [node name="Title_Line" type="HSeparator" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Seperator_M"]
 margin_left = 40.0
-margin_right = 941.0
+margin_right = 945.0
 margin_bottom = 4.0
 size_flags_horizontal = 3
 custom_styles/separator = SubResource( 1 )
@@ -179,31 +179,31 @@ __meta__ = {
 
 [node name="Text_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 57.0
-margin_right = 981.0
+margin_right = 985.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Button_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
-margin_right = 224.0
+margin_right = 211.0
 margin_bottom = 322.0
 custom_constants/margin_right = 50
 custom_constants/margin_left = 80
 
 [node name="Button_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M"]
 margin_left = 80.0
-margin_right = 174.0
+margin_right = 161.0
 margin_bottom = 322.0
 
 [node name="Block_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
-margin_right = 94.0
+margin_right = 81.0
 margin_bottom = 163.0
 custom_constants/margin_top = 40
 custom_constants/margin_bottom = 30
 
 [node name="Block_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M"]
 margin_top = 40.0
-margin_right = 94.0
+margin_right = 81.0
 margin_bottom = 133.0
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 5 )
@@ -211,12 +211,13 @@ texture_hover = ExtResource( 28 )
 
 [node name="Video_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
 margin_top = 167.0
-margin_right = 94.0
-margin_bottom = 311.0
+margin_right = 81.0
+margin_bottom = 247.0
 custom_constants/margin_top = 30
 custom_constants/margin_bottom = 50
 
 [node name="Video_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M"]
+visible = false
 margin_top = 30.0
 margin_right = 94.0
 margin_bottom = 94.0
@@ -225,39 +226,36 @@ texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 4 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
-margin_left = 228.0
-margin_right = 981.0
+margin_left = 215.0
+margin_right = 985.0
 margin_bottom = 322.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Text_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer"]
-margin_right = 741.0
-margin_bottom = 624.0
+margin_right = 770.0
+margin_bottom = 322.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 15
 
 [node name="Text" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer/Text_M"]
-margin_top = 15.0
-margin_right = 741.0
-margin_bottom = 624.0
+margin_top = 119.0
+margin_right = 770.0
+margin_bottom = 218.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 29 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "<More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. >
+text = "Just a test to see if the ranking algo sorts this tip to the top!
 
-<More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. >
-
-<More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. >
-<More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. More Default Text. >"
+link is a unix time calculator, pretty lit :D"
 autowrap = true
 
 [node name="Down_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 383.0
-margin_right = 981.0
+margin_right = 985.0
 margin_bottom = 498.0
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
@@ -268,7 +266,7 @@ custom_constants/margin_bottom = 30
 [node name="Down_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M"]
 margin_left = 20.0
 margin_top = 30.0
-margin_right = 961.0
+margin_right = 965.0
 margin_bottom = 85.0
 
 [node name="Prev_Next_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
@@ -342,23 +340,24 @@ __meta__ = {
 
 [node name="Like_DisLike_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
 margin_left = 288.0
-margin_right = 572.0
+margin_right = 667.0
 margin_bottom = 55.0
 
 [node name="Like_DisLike_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M"]
-margin_right = 284.0
+margin_right = 379.0
 margin_bottom = 55.0
 
 [node name="Like_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
-margin_right = 172.0
+margin_right = 197.0
 margin_bottom = 55.0
 custom_constants/margin_right = 20
-custom_constants/margin_left = 50
+custom_constants/margin_left = 20
 
 [node name="Like_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M"]
-margin_left = 50.0
-margin_right = 152.0
+margin_left = 20.0
+margin_right = 177.0
 margin_bottom = 55.0
+size_flags_horizontal = 3
 
 [node name="Like_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
 margin_right = 53.0
@@ -367,26 +366,34 @@ texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 27 )
 texture_hover = ExtResource( 13 )
 
-[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
+[node name="C_L" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
 margin_left = 57.0
+margin_right = 157.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/C_L"]
+margin_left = 20.0
 margin_top = 9.0
-margin_right = 102.0
+margin_right = 80.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 30 )
 custom_colors/font_color = Color( 0.27451, 0.992157, 0.517647, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "127"
+text = "8900"
 
 [node name="DisLike_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
-margin_left = 176.0
-margin_right = 284.0
+margin_left = 201.0
+margin_right = 379.0
 margin_bottom = 55.0
+size_flags_horizontal = 3
 custom_constants/margin_left = 20
 
 [node name="DisLike_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M"]
 margin_left = 20.0
-margin_right = 108.0
+margin_right = 178.0
 margin_bottom = 55.0
+size_flags_horizontal = 3
 
 [node name="DisLike_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
 margin_right = 54.0
@@ -395,26 +402,30 @@ texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 25 )
 
-[node name="DisLike_L" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
+[node name="C_D" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
 margin_left = 58.0
+margin_right = 158.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="DisLike_L" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/C_D"]
+margin_left = 27.0
 margin_top = 9.0
-margin_right = 88.0
+margin_right = 72.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 30 )
 custom_colors/font_color = Color( 0.909804, 0.541176, 0.270588, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-text = "28"
+text = "310"
 
 [node name="Upload_Close_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
-margin_left = 576.0
-margin_right = 930.0
+margin_left = 671.0
+margin_right = 945.0
 margin_bottom = 55.0
-custom_constants/margin_right = 20
-custom_constants/margin_left = 70
+custom_constants/margin_right = 10
 
 [node name="Up_Cl_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M"]
-margin_left = 70.0
-margin_right = 334.0
+margin_right = 264.0
 margin_bottom = 55.0
 
 [node name="Up_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C"]

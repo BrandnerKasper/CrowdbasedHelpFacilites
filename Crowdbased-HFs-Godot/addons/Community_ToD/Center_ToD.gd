@@ -125,10 +125,10 @@ func set_Video_URL(url):
 
 
 func set_Like_Count(like):
-	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/Label".text = str(like)
+	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/C_L/Label".text = str(like)
 
 func set_Dislike_Count(dislike):
-	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/DisLike_L".text = str(dislike)
+	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/C_D/DisLike_L".text = str(dislike)
 
 
 # Buttons
