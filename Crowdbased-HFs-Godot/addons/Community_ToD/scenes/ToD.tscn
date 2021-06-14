@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://addons/Community_ToD/Center_ToD.gd" type="Script" id=2]
+[ext_resource path="res://addons/Community_ToD/scripts/ToD.gd" type="Script" id=2]
 [ext_resource path="res://addons/Community_ToD/textures/Prev_Next_Button_hovered.png" type="Texture" id=3]
 [ext_resource path="res://addons/Community_ToD/textures/Video_Button_hovered.png" type="Texture" id=4]
 [ext_resource path="res://addons/Community_ToD/textures/Blog_Button_pressed.png" type="Texture" id=5]
@@ -35,21 +35,12 @@
 color = Color( 0.862745, 0.862745, 0.862745, 1 )
 thickness = 2
 
-[node name="ToD" type="CenterContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -0.00012207
-size_flags_horizontal = 3
-size_flags_vertical = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Root" type="Control" parent="."]
+[node name="ToD" type="Control"]
 margin_left = 960.0
 margin_top = 539.0
 margin_right = 960.0
 margin_bottom = 539.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 2 )
@@ -57,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Outer_Rect" type="NinePatchRect" parent="Root"]
+[node name="Outer_Rect" type="NinePatchRect" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -71,7 +62,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Top_C" type="CenterContainer" parent="Root/Outer_Rect"]
+[node name="Top_C" type="CenterContainer" parent="Outer_Rect"]
 margin_right = 1036.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
@@ -80,7 +71,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToD_L" type="Label" parent="Root/Outer_Rect/Top_C"]
+[node name="ToD_L" type="Label" parent="Outer_Rect/Top_C"]
 margin_left = 354.0
 margin_top = 7.0
 margin_right = 682.0
@@ -93,7 +84,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="X_M" type="MarginContainer" parent="Root/Outer_Rect"]
+[node name="X_M" type="MarginContainer" parent="Outer_Rect"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -50.0
@@ -103,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="X_Button" type="TextureButton" parent="Root/Outer_Rect/X_M"]
+[node name="X_Button" type="TextureButton" parent="Outer_Rect/X_M"]
 margin_top = 14.0
 margin_right = 50.0
 margin_bottom = 50.0
@@ -114,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Inner_Rect" type="NinePatchRect" parent="Root/Outer_Rect"]
+[node name="Inner_Rect" type="NinePatchRect" parent="Outer_Rect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -128,7 +119,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Inner_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect"]
+[node name="Inner_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect"]
 margin_right = 995.0
 margin_bottom = 508.0
 custom_constants/margin_right = 5
@@ -139,7 +130,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Body_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M"]
+[node name="Body_C" type="VBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M"]
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 990.0
@@ -147,11 +138,11 @@ margin_bottom = 503.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Title_C" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+[node name="Title_C" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_right = 985.0
 margin_bottom = 45.0
 
-[node name="Title" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C"]
+[node name="Title" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C"]
 margin_left = 373.0
 margin_right = 611.0
 margin_bottom = 45.0
@@ -160,14 +151,14 @@ custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Very high Score"
 
-[node name="Seperator_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+[node name="Seperator_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 49.0
 margin_right = 985.0
 margin_bottom = 53.0
 custom_constants/margin_right = 40
 custom_constants/margin_left = 40
 
-[node name="Title_Line" type="HSeparator" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Seperator_M"]
+[node name="Title_Line" type="HSeparator" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Seperator_M"]
 margin_left = 40.0
 margin_right = 945.0
 margin_bottom = 4.0
@@ -177,31 +168,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+[node name="Text_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 57.0
 margin_right = 985.0
 margin_bottom = 379.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
+[node name="Button_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
 margin_right = 211.0
 margin_bottom = 322.0
 custom_constants/margin_right = 50
 custom_constants/margin_left = 80
 
-[node name="Button_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M"]
+[node name="Button_C" type="VBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M"]
 margin_left = 80.0
 margin_right = 161.0
 margin_bottom = 322.0
 
-[node name="Block_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
+[node name="Block_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
 margin_right = 81.0
 margin_bottom = 163.0
 custom_constants/margin_top = 40
 custom_constants/margin_bottom = 30
 
-[node name="Block_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M"]
+[node name="Block_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M"]
 margin_top = 40.0
 margin_right = 81.0
 margin_bottom = 133.0
@@ -209,14 +200,14 @@ texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 28 )
 
-[node name="Video_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
+[node name="Video_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
 margin_top = 167.0
 margin_right = 81.0
 margin_bottom = 247.0
 custom_constants/margin_top = 30
 custom_constants/margin_bottom = 50
 
-[node name="Video_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M"]
+[node name="Video_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M"]
 visible = false
 margin_top = 30.0
 margin_right = 94.0
@@ -225,21 +216,21 @@ texture_normal = ExtResource( 22 )
 texture_pressed = ExtResource( 9 )
 texture_hover = ExtResource( 4 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
 margin_left = 215.0
 margin_right = 985.0
 margin_bottom = 322.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Text_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer"]
+[node name="Text_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer"]
 margin_right = 770.0
 margin_bottom = 322.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_top = 15
 
-[node name="Text" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer/Text_M"]
+[node name="Text" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer/Text_M"]
 margin_top = 119.0
 margin_right = 770.0
 margin_bottom = 218.0
@@ -253,7 +244,7 @@ text = "Just a test to see if the ranking algo sorts this tip to the top!
 link is a unix time calculator, pretty lit :D"
 autowrap = true
 
-[node name="Down_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+[node name="Down_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
 margin_top = 383.0
 margin_right = 985.0
 margin_bottom = 498.0
@@ -263,34 +254,34 @@ custom_constants/margin_top = 30
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 30
 
-[node name="Down_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M"]
+[node name="Down_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M"]
 margin_left = 20.0
 margin_top = 30.0
 margin_right = 965.0
 margin_bottom = 85.0
 
-[node name="Prev_Next_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
+[node name="Prev_Next_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
 margin_right = 284.0
 margin_bottom = 55.0
 custom_constants/margin_right = 20
 
-[node name="Prev_Next_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M"]
+[node name="Prev_Next_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M"]
 margin_right = 264.0
 margin_bottom = 55.0
 
-[node name="Prev_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C"]
+[node name="Prev_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C"]
 margin_right = 135.0
 margin_bottom = 55.0
 custom_constants/margin_right = 10
 
-[node name="Prev_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M"]
+[node name="Prev_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M"]
 margin_right = 125.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 3 )
 
-[node name="Prev" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M/Prev_Button"]
+[node name="Prev" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M/Prev_Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -308,19 +299,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Next_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C"]
+[node name="Next_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C"]
 margin_left = 139.0
 margin_right = 264.0
 margin_bottom = 55.0
 
-[node name="Next_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M"]
+[node name="Next_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M"]
 margin_right = 125.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 15 )
 texture_pressed = ExtResource( 17 )
 texture_hover = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M/Next_Button"]
+[node name="Label" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M/Next_Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -338,41 +329,41 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Like_DisLike_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
+[node name="Like_DisLike_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
 margin_left = 288.0
 margin_right = 667.0
 margin_bottom = 55.0
 
-[node name="Like_DisLike_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M"]
+[node name="Like_DisLike_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M"]
 margin_right = 379.0
 margin_bottom = 55.0
 
-[node name="Like_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
+[node name="Like_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
 margin_right = 197.0
 margin_bottom = 55.0
 custom_constants/margin_right = 20
 custom_constants/margin_left = 20
 
-[node name="Like_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M"]
+[node name="Like_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M"]
 margin_left = 20.0
 margin_right = 177.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 
-[node name="Like_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
+[node name="Like_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
 margin_right = 53.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 12 )
 texture_pressed = ExtResource( 27 )
 texture_hover = ExtResource( 13 )
 
-[node name="C_L" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
+[node name="C_L" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
 margin_left = 57.0
 margin_right = 157.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/C_L"]
+[node name="Label" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/C_L"]
 margin_left = 20.0
 margin_top = 9.0
 margin_right = 80.0
@@ -382,33 +373,33 @@ custom_colors/font_color = Color( 0.27451, 0.992157, 0.517647, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "8900"
 
-[node name="DisLike_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
+[node name="DisLike_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C"]
 margin_left = 201.0
 margin_right = 379.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 custom_constants/margin_left = 20
 
-[node name="DisLike_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M"]
+[node name="DisLike_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M"]
 margin_left = 20.0
 margin_right = 178.0
 margin_bottom = 55.0
 size_flags_horizontal = 3
 
-[node name="DisLike_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
+[node name="DisLike_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
 margin_right = 54.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 19 )
 texture_hover = ExtResource( 25 )
 
-[node name="C_D" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
+[node name="C_D" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
 margin_left = 58.0
 margin_right = 158.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 100, 0 )
 
-[node name="DisLike_L" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/C_D"]
+[node name="DisLike_L" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/C_D"]
 margin_left = 27.0
 margin_top = 9.0
 margin_right = 72.0
@@ -418,29 +409,29 @@ custom_colors/font_color = Color( 0.909804, 0.541176, 0.270588, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "310"
 
-[node name="Upload_Close_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
+[node name="Upload_Close_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C"]
 margin_left = 671.0
 margin_right = 945.0
 margin_bottom = 55.0
 custom_constants/margin_right = 10
 
-[node name="Up_Cl_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M"]
+[node name="Up_Cl_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M"]
 margin_right = 264.0
 margin_bottom = 55.0
 
-[node name="Up_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C"]
+[node name="Up_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C"]
 margin_right = 135.0
 margin_bottom = 55.0
 custom_constants/margin_right = 10
 
-[node name="Upload_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M"]
+[node name="Upload_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M"]
 margin_right = 125.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 26 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 20 )
 
-[node name="Upload" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button"]
+[node name="Upload" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -461,19 +452,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Close_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C"]
+[node name="Close_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C"]
 margin_left = 139.0
 margin_right = 264.0
 margin_bottom = 55.0
 
-[node name="Close_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M"]
+[node name="Close_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M"]
 margin_right = 125.0
 margin_bottom = 55.0
 texture_normal = ExtResource( 23 )
 texture_pressed = ExtResource( 7 )
 texture_hover = ExtResource( 16 )
 
-[node name="Close" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M/Close_Button"]
+[node name="Close" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M/Close_Button"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -492,12 +483,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Root/Outer_Rect/X_M/X_Button" to="Root" method="_on_X_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M/Block_Button" to="Root" method="_on_Block_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M/Video_Button" to="Root" method="_on_Video_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M/Prev_Button" to="Root" method="_on_Prev_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M/Next_Button" to="Root" method="_on_Next_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/Like_Button" to="Root" method="_on_Like_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/DisLike_Button" to="Root" method="_on_DisLike_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button" to="Root" method="_on_Upload_Button_pressed"]
-[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M/Close_Button" to="Root" method="_on_Close_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/X_M/X_Button" to="." method="_on_X_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M/Block_Button" to="." method="_on_Block_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M/Video_Button" to="." method="_on_Video_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Prev_M/Prev_Button" to="." method="_on_Prev_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Prev_Next_M/Prev_Next_C/Next_M/Next_Button" to="." method="_on_Next_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/Like_Button" to="." method="_on_Like_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/DisLike_Button" to="." method="_on_DisLike_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Up_M/Upload_Button" to="." method="_on_Upload_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Upload_Close_M/Up_Cl_C/Close_M/Close_Button" to="." method="_on_Close_Button_pressed"]

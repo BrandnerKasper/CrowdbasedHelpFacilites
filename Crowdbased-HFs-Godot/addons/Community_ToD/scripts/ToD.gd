@@ -4,8 +4,7 @@ extends Control
 # Initializes a Community Tip of the Day (ToD) that fills the generic UI scene with tips from a database file
 
 # Handles scene transistion
-var upload_tod_scene_path = "res://addons/Community_ToD/Upload_ToD.tscn"
-var simultaneous_scene = preload("res://addons/Community_ToD/Upload_ToD.tscn").instance()
+signal change_to_upload
 
 # SQLite Database
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
@@ -177,11 +176,7 @@ func _on_DisLike_Button_pressed():
 
 func _on_Upload_Button_pressed():
 	print("Upload Button pressed")
-	change_Scene(upload_tod_scene_path)
-
-
-func change_Scene(path):
-	get_tree().change_scene(path)
+	emit_signal("change_to_upload")
 
 
 func _on_Close_Button_pressed():

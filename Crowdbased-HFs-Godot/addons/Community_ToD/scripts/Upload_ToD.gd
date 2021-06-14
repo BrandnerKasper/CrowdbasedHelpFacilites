@@ -4,7 +4,7 @@ extends Control
 # Handles the Upload of a Users tip to the database
 
 # Handles scene change
-var community_tod_scene_path = "res://addons/Community_ToD/ToD.tscn"
+signal close_Button_pressed
 
 # SQLite Database
 const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
@@ -60,14 +60,13 @@ func _on_Upload_Button_pressed():
 	if(check_ToD()):
 		print("Uploading ToD...")
 		commit_Data_to_DB()
-		change_Scene(community_tod_scene_path)
 	else:
 		printerr("Please fill in all required fields.")
 
 
 func _on_Close_Button_pressed():
 	print("Close Button pressed")
-	change_Scene(community_tod_scene_path)
+	emit_signal("close_Button_pressed")
 
 
 func _on_X_Button_pressed():
@@ -100,7 +99,3 @@ func commit_Data_to_DB():
 	dict["DisLike_Count"] = 0
 	dict["Unix_Timestamp"] = OS.get_unix_time()
 	db.insert_row(tableName, dict)
-
-
-func change_Scene(path):
-	get_tree().change_scene(path)
