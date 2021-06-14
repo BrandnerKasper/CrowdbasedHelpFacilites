@@ -1,0 +1,443 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Video Button_S.png" type="Texture" id=1]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Blog Button_S.png" type="Texture" id=2]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Title Input.png" type="Texture" id=3]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Title Input_Focus.png" type="Texture" id=4]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Description Input.png" type="Texture" id=5]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_ToD/Description Input_Focus.png" type="Texture" id=8]
+[ext_resource path="res://addons/Community_ToD/Upload_ToD.gd" type="Script" id=9]
+[ext_resource path="res://addons/Community_ToD/textures/outer_Rec.png" type="Texture" id=11]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button_pressed.png" type="Texture" id=14]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button_hovered.png" type="Texture" id=16]
+[ext_resource path="res://addons/Community_ToD/textures/inner_Rec.png" type="Texture" id=18]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button_hovered.png" type="Texture" id=20]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button_hovered.png" type="Texture" id=21]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button.png" type="Texture" id=23]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button.png" type="Texture" id=24]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button.png" type="Texture" id=26]
+[ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD_Body_Text.tres" type="DynamicFont" id=29]
+[ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD-Button.tres" type="DynamicFont" id=30]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 625, 38 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 625, 38 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 625, 98 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 625, 98 )
+
+[node name="Upload_ToD" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.594604
+margin_bottom = 0.594482
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Root" type="Control" parent="."]
+margin_left = 960.0
+margin_top = 539.0
+margin_right = 960.0
+margin_bottom = 539.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Outer_Rect" type="NinePatchRect" parent="Root"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -518.5
+margin_top = -292.5
+margin_right = 518.5
+margin_bottom = 292.5
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top_C" type="CenterContainer" parent="Root/Outer_Rect"]
+margin_right = 1036.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToD_L" type="Label" parent="Root/Outer_Rect/Top_C"]
+margin_left = 306.0
+margin_top = 7.0
+margin_right = 730.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Upload Community Tip of the Day"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X_M" type="MarginContainer" parent="Root/Outer_Rect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0
+margin_bottom = 50.0
+custom_constants/margin_top = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X_Button" type="TextureButton" parent="Root/Outer_Rect/X_M"]
+margin_top = 14.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inner_Rect" type="NinePatchRect" parent="Root/Outer_Rect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.5
+margin_top = -241.5
+margin_right = 498.5
+margin_bottom = 268.5
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inner_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect"]
+margin_right = 993.0
+margin_bottom = 507.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M"]
+margin_left = 50.0
+margin_top = 5.0
+margin_right = 988.0
+margin_bottom = 502.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Upload_C" type="VBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_right = 938.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="Title_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
+margin_right = 938.0
+margin_bottom = 71.0
+
+[node name="M_T" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C"]
+margin_right = 202.0
+margin_bottom = 71.0
+custom_constants/margin_right = 150
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 20
+
+[node name="Titel" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T"]
+margin_top = 20.0
+margin_right = 52.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 29 )
+text = "Title:"
+
+[node name="M_T_E" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C"]
+margin_left = 206.0
+margin_right = 938.0
+margin_bottom = 71.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="Title_Edit" type="LineEdit" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E"]
+margin_top = 10.0
+margin_right = 712.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 29 )
+align = 1
+placeholder_text = "\"My awesome Tip of the Day Title\""
+
+[node name="Description_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
+margin_top = 71.0
+margin_right = 938.0
+margin_bottom = 244.0
+size_flags_vertical = 3
+
+[node name="M_D" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C"]
+margin_right = 203.0
+margin_bottom = 173.0
+size_flags_vertical = 3
+custom_constants/margin_right = 75
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 80
+
+[node name="Description" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_D"]
+margin_top = 41.0
+margin_right = 128.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 29 )
+text = "Description:"
+
+[node name="M_Txt" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C"]
+margin_left = 207.0
+margin_right = 938.0
+margin_bottom = 173.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="Description_Edit" type="TextEdit" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt"]
+margin_top = 10.0
+margin_right = 711.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = ExtResource( 29 )
+wrap_enabled = true
+
+[node name="M_B" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
+margin_top = 244.0
+margin_right = 938.0
+margin_bottom = 337.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 20
+
+[node name="Blog_URL_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B"]
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 73.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C"]
+margin_right = 204.0
+margin_bottom = 53.0
+custom_constants/margin_right = 90
+
+[node name="B_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/MarginContainer"]
+margin_right = 114.0
+margin_bottom = 53.0
+
+[node name="Block_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/MarginContainer/B_C"]
+margin_right = 50.0
+margin_bottom = 53.0
+texture_normal = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/MarginContainer/B_C"]
+margin_left = 54.0
+margin_top = 11.0
+margin_right = 114.0
+margin_bottom = 42.0
+custom_fonts/font = ExtResource( 29 )
+text = " URL: "
+
+[node name="B_T_E" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C"]
+margin_left = 208.0
+margin_right = 938.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="Blog_URL_Edit" type="LineEdit" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E"]
+margin_top = 10.0
+margin_right = 710.0
+margin_bottom = 43.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 29 )
+align = 1
+placeholder_text = "\"https://godotengine.org/\""
+
+[node name="M_V" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
+margin_top = 337.0
+margin_right = 938.0
+margin_bottom = 428.0
+custom_constants/margin_top = 20
+custom_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V"]
+margin_top = 20.0
+margin_right = 938.0
+margin_bottom = 71.0
+
+[node name="V_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer"]
+margin_right = 206.0
+margin_bottom = 51.0
+custom_constants/margin_right = 85
+
+[node name="V_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_M"]
+margin_right = 121.0
+margin_bottom = 51.0
+
+[node name="Video_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_M/V_C"]
+margin_right = 69.0
+margin_bottom = 51.0
+texture_normal = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_M/V_C"]
+margin_left = 73.0
+margin_top = 10.0
+margin_right = 121.0
+margin_bottom = 41.0
+custom_fonts/font = ExtResource( 29 )
+text = "URL:"
+
+[node name="V_T_E" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer"]
+margin_left = 210.0
+margin_right = 938.0
+margin_bottom = 51.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_bottom = 10
+
+[node name="Video_URL_Edit" type="LineEdit" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_T_E"]
+margin_top = 10.0
+margin_right = 708.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/focus = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 29 )
+align = 1
+placeholder_text = "\"https://www.youtube.com/watch?v=42HKCFf5Lf4\""
+
+[node name="Down_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_top = 432.0
+margin_right = 938.0
+margin_bottom = 497.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 918.0
+margin_bottom = 55.0
+
+[node name="Up_Cl_C" type="HBoxContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer"]
+margin_left = 247.0
+margin_right = 651.0
+margin_bottom = 50.0
+
+[node name="Up_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C"]
+margin_right = 225.0
+margin_bottom = 50.0
+custom_constants/margin_right = 100
+
+[node name="Upload_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M"]
+margin_right = 125.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 20 )
+
+[node name="Upload" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M/Upload_Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.9142
+margin_top = -27.5
+margin_right = 62.0858
+margin_bottom = 23.5
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Upload"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close_M" type="MarginContainer" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C"]
+margin_left = 229.0
+margin_right = 404.0
+margin_bottom = 50.0
+custom_constants/margin_left = 50
+
+[node name="Close_Button" type="TextureButton" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M"]
+margin_left = 50.0
+margin_right = 175.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 16 )
+
+[node name="Close" type="Label" parent="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M/Close_Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0281
+margin_top = -28.4439
+margin_right = 62.9719
+margin_bottom = 21.5561
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.984314, 0.984314, 0.984314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Root/Outer_Rect/X_M/X_Button" to="Root" method="_on_X_Button_pressed"]
+[connection signal="focus_exited" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit" to="Root" method="_on_Title_Edit_focus_exited"]
+[connection signal="text_entered" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit" to="Root" method="_on_Title_Edit_text_entered"]
+[connection signal="focus_exited" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt/Description_Edit" to="Root" method="_on_Description_Edit_focus_exited"]
+[connection signal="focus_exited" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E/Blog_URL_Edit" to="Root" method="_on_Blog_URL_Edit_focus_exited"]
+[connection signal="text_entered" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E/Blog_URL_Edit" to="Root" method="_on_Blog_URL_Edit_text_entered"]
+[connection signal="focus_exited" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_T_E/Video_URL_Edit" to="Root" method="_on_Video_URL_Edit_focus_exited"]
+[connection signal="text_entered" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_T_E/Video_URL_Edit" to="Root" method="_on_Video_URL_Edit_text_entered"]
+[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M/Upload_Button" to="Root" method="_on_Upload_Button_pressed"]
+[connection signal="pressed" from="Root/Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M/Close_Button" to="Root" method="_on_Close_Button_pressed"]
