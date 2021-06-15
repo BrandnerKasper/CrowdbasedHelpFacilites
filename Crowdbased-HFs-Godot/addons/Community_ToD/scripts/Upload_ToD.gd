@@ -3,19 +3,17 @@ extends Control
 
 # Handles the Upload of a Users tip to the database
 
-# Handles scene change
-signal close_Button_pressed
+# Signals for scene change and upload to database
+signal change_scene_pressed
+signal upload_Button_pressed(user_tip)
 
-# SQLite Database
-const SQLite = preload("res://addons/godot-sqlite/bin/gdsqlite.gdns")
-var db
-var db_name = "res://data/Community_ToD"
 
 # Upload ToD variables for Database:
 var title : String
 var body_text : String
 var blog_url : String
 var video_url : String
+var user_tip : Dictionary
 
 
 # Handle Line/Text Edits:
@@ -59,18 +57,21 @@ func _on_Upload_Button_pressed():
 	print("Upload Button pressed")
 	if(check_ToD()):
 		print("Uploading ToD...")
-		commit_Data_to_DB()
+		#commit_Data_to_DB()
+		init_user_tip()
+		emit_signal("upload_Button_pressed", user_tip)
 	else:
 		printerr("Please fill in all required fields.")
 
 
 func _on_Close_Button_pressed():
 	print("Close Button pressed")
-	emit_signal("close_Button_pressed")
+	emit_signal("change_scene_pressed")
 
 
 func _on_X_Button_pressed():
 	print("X Button pressed")
+	emit_signal("change_scene_pressed")
 
 
 # Helper functions:
@@ -83,19 +84,11 @@ func check_ToD():
 		return false
 	return true
 
-
-# Send to database
-func commit_Data_to_DB():
-	db = SQLite.new()
-	db.path = db_name
-	db.open_db()
-	var tableName = "ToD"
-	var dict : Dictionary = Dictionary()
-	dict["Title"] = title
-	dict["Body_Text"] = body_text
-	dict["Blog_URL"] = blog_url
-	dict["Video_URL"] = video_url
-	dict["Like_Count"] = 0
-	dict["DisLike_Count"] = 0
-	dict["Unix_Timestamp"] = OS.get_unix_time()
-	db.insert_row(tableName, dict)
+func init_user_tip():
+	user_tip["Title"] = title
+	user_tip["Body_Text"] = body_text
+	user_tip["Blog_URL"] = blog_url
+	user_tip["Video_URL"] = video_url
+	user_tip["Like_Count"] = 0
+	user_tip["DisLike_Count"] = 0
+	user_tip["Unix_Timestamp"] = OS.get_unix_time()
