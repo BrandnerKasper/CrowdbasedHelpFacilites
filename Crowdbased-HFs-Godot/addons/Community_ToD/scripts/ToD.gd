@@ -7,6 +7,10 @@ extends Control
 signal upload_button_pressed
 signal close_pressed
 
+# Updates Like and DisLike Count
+signal like_pressed
+signal dislike_pressed
+
 # Community ToD variables
 var tod_list : Array
 var tod : Dictionary
@@ -15,15 +19,22 @@ var counter = 0
 # ToD UI variables
 var blog_url : String
 var video_url : String
+var like_button
+var dislike_button
 
 func _ready():
 	call_deferred("_init_ToD")
 
 
 func _init_ToD():
+	_init_Like_DisLike_Buttons()
 	rank_List_of_ToDs()
-	get_ToD()
-	set_ToD()
+	update_ToD()
+
+
+func _init_Like_DisLike_Buttons():
+	like_button = $Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C/Like_Button
+	dislike_button = $Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C/DisLike_Button
 
 
 func rank_List_of_ToDs():
@@ -49,12 +60,19 @@ func sort_ToDs(tip_1 : Dictionary, tip_2 : Dictionary):
 	return false
 
 
+func update_ToD():
+	if tod_list.size() > 0:
+		get_ToD()
+		set_ToD()
+
+
 func get_ToD():
 	tod = tod_list[counter]
 
 
 func set_ToD():
 	set_Title(tod["Title"])
+	set_Date_Version(tod["Unix_Timestamp"], tod["Engine_Version"])
 	set_Body_Text(tod["Body_Text"])
 	set_Blog_URL(tod["Blog_URL"])
 	set_Video_URL(tod["Video_URL"])
@@ -65,6 +83,13 @@ func set_ToD():
 # Set ToD variables
 func set_Title(title : String):
 	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C/Title".text = title
+
+
+func set_Date_Version(timestamp : int, engine_version : String):
+	var date_dict = OS.get_datetime_from_unix_time(timestamp)
+	var date = str(date_dict["day"]) + "." + str(date_dict["month"]) + "." + str(date_dict["year"])
+	
+	$Outer_Rect/Inner_Rect/Inner_M/Body_C/Date_Version_M/Date_Version_L.text = str(date) + " (Godot Version " + str(engine_version) + ")"
 
 
 func set_Body_Text(body_text : String):
@@ -121,8 +146,9 @@ func _on_Prev_Button_pressed():
 		counter = tod_list.size()-1
 	else:
 		counter -= 1
-	get_ToD()
-	set_ToD()
+	update_ToD()
+	
+	enable_Like_DisLike()
 
 
 func _on_Next_Button_pressed():
@@ -131,17 +157,30 @@ func _on_Next_Button_pressed():
 		counter = 0
 	else:
 		counter += 1
-	get_ToD()
-	set_ToD()
+	update_ToD()
+	
+	enable_Like_DisLike()
+
+
+func enable_Like_DisLike():
+	like_button.disabled = false
+	dislike_button.disabled = false
 
 
 func _on_Like_Button_pressed():
 	print("Like Button pressed")
+	like_button.disabled = true
+	emit_signal("like_pressed")
+	tod_list[counter]["Like_Count"] += 1
+	update_ToD()
 
 
 func _on_DisLike_Button_pressed():
 	print("DisLike Button pressed")
-
+	dislike_button.disabled = true
+	emit_signal("dislike_pressed")
+	tod_list[counter]["DisLike_Count"] += 1
+	update_ToD()
 
 func _on_Upload_Button_pressed():
 	print("Upload Button pressed")

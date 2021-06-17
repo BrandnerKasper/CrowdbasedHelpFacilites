@@ -188,28 +188,28 @@ placeholder_text = "\"My awesome Tip of the Day Title\""
 [node name="Description_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
 margin_top = 71.0
 margin_right = 938.0
-margin_bottom = 244.0
+margin_bottom = 249.0
 size_flags_vertical = 3
 
 [node name="M_D" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C"]
 margin_right = 203.0
-margin_bottom = 173.0
+margin_bottom = 178.0
 size_flags_vertical = 3
 custom_constants/margin_right = 75
 custom_constants/margin_top = 20
 custom_constants/margin_bottom = 80
 
 [node name="Description" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_D"]
-margin_top = 41.0
+margin_top = 43.0
 margin_right = 128.0
-margin_bottom = 72.0
+margin_bottom = 74.0
 custom_fonts/font = ExtResource( 29 )
 text = "Description:"
 
 [node name="M_Txt" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C"]
 margin_left = 207.0
 margin_right = 938.0
-margin_bottom = 173.0
+margin_bottom = 178.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/margin_right = 20
@@ -219,7 +219,7 @@ custom_constants/margin_bottom = 10
 [node name="Description_Edit" type="TextEdit" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt"]
 margin_top = 10.0
 margin_right = 711.0
-margin_bottom = 163.0
+margin_bottom = 168.0
 size_flags_horizontal = 3
 custom_styles/focus = SubResource( 3 )
 custom_styles/normal = SubResource( 4 )
@@ -227,9 +227,9 @@ custom_fonts/font = ExtResource( 29 )
 wrap_enabled = true
 
 [node name="M_B" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
-margin_top = 244.0
+margin_top = 249.0
 margin_right = 938.0
-margin_bottom = 337.0
+margin_bottom = 342.0
 custom_constants/margin_top = 20
 custom_constants/margin_bottom = 20
 
@@ -281,11 +281,11 @@ align = 1
 placeholder_text = "\"https://godotengine.org/\""
 
 [node name="M_V" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C"]
-margin_top = 337.0
+margin_top = 342.0
 margin_right = 938.0
 margin_bottom = 428.0
 custom_constants/margin_top = 20
-custom_constants/margin_bottom = 20
+custom_constants/margin_bottom = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V"]
 margin_top = 20.0

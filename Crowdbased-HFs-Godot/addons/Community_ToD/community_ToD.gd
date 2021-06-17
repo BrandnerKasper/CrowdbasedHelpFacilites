@@ -72,7 +72,8 @@ func _init_List_of_ToDs():
 	db.path = db_name
 	db.open_db()
 	db.query("SELECT ToD.Title as Title, ToD.Body_Text as Body_Text, ToD.Blog_URL as Blog_URL, ToD.Video_URL as Video_URL," +
-				"ToD.Like_Count as Like_Count, ToD.DisLike_Count as DisLike_Count, ToD.Unix_Timestamp as Unix_Timestamp from ToD")
+				"ToD.Like_Count as Like_Count, ToD.DisLike_Count as DisLike_Count, ToD.Unix_Timestamp as Unix_Timestamp," + 
+				"ToD.Engine_Version as Engine_Version from ToD")
 	return db.query_result
 
 

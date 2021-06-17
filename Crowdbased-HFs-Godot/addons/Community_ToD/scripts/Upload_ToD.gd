@@ -92,3 +92,10 @@ func init_user_tip():
 	user_tip["Like_Count"] = 0
 	user_tip["DisLike_Count"] = 0
 	user_tip["Unix_Timestamp"] = OS.get_unix_time()
+	user_tip["Engine_Version"] = get_engine_version()
+
+
+func get_engine_version():
+	var engine_version_dict = Engine.get_version_info()
+	var engine_version = str(engine_version_dict["major"]) + "." + str(engine_version_dict["minor"]) + "." + str(engine_version_dict["patch"])
+	return engine_version
