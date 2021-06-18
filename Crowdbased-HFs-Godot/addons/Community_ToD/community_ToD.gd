@@ -62,8 +62,10 @@ func _init_ToD():
 	
 	# Set logic of Tip of the Day scene
 	toD_instance.tod_list = _init_List_of_ToDs()
-	toD_instance.connect("upload_button_pressed", self, "change_to_upload_scene")
-	toD_instance.connect("close_pressed", self, "close_ToD")
+	toD_instance.connect("upload_button_pressed", self, "_change_to_upload_scene")
+	toD_instance.connect("close_pressed", self, "_close_ToD")
+	toD_instance.connect("like_pressed", self, "_handle_like_pressed")
+	toD_instance.connect("dislike_pressed", self, "_handle_dislike_pressed")
 	toD_instance.visible = false
 
 
@@ -71,21 +73,35 @@ func _init_List_of_ToDs():
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	db.query("SELECT ToD.Title as Title, ToD.Body_Text as Body_Text, ToD.Blog_URL as Blog_URL, ToD.Video_URL as Video_URL," +
-				"ToD.Like_Count as Like_Count, ToD.DisLike_Count as DisLike_Count, ToD.Unix_Timestamp as Unix_Timestamp," + 
-				"ToD.Engine_Version as Engine_Version from ToD")
+	db.query("SELECT ToD.ToD_ID as ToD_ID, ToD.Title as Title, ToD.Body_Text as Body_Text, ToD.Blog_URL as Blog_URL, " +  
+				"ToD.Video_URL as Video_URL, ToD.Like_Count as Like_Count, ToD.DisLike_Count as DisLike_Count, " + 
+				"ToD.Unix_Timestamp as Unix_Timestamp, ToD.Engine_Version as Engine_Version from ToD")
 	return db.query_result
 
 
-func change_to_upload_scene():
+func _change_to_upload_scene():
 	print("reacting to upload button from ToD scene")
 	toD_instance.visible = false
 	upload_tod_instance.visible = true
 
 
-func close_ToD():
+func _close_ToD():
 	print("reacting to close and x button from ToD scene")
 	get_editor_interface().set_plugin_enabled("Community_ToD", false) 
+
+
+func _handle_like_pressed(vote, id):
+	db = SQLite.new()
+	db.path = db_name
+	db.open_db()
+	db.query("UPDATE ToD SET Like_Count = Like_Count + " + str(vote) + " WHERE ToD_ID = " + str(id))
+
+
+func _handle_dislike_pressed(vote, id):
+	db = SQLite.new()
+	db.path = db_name
+	db.open_db()
+	db.query("UPDATE ToD SET DisLike_Count = DisLike_Count + " + str(vote) + " WHERE ToD_ID = " + str(id))
 
 
 # Code logic for Upload Tip of the Day scene
@@ -95,18 +111,18 @@ func _init_Upload_ToD():
 	community_ToD_Viewport = get_editor_interface().get_editor_viewport().add_child(upload_tod_instance)
 	
 	# Set logic of Upload Tip of the Day scene
-	upload_tod_instance.connect("change_scene_pressed", self, "change_to_tod_scene")
-	upload_tod_instance.connect("upload_Button_pressed", self, "handle_upload_tip")
+	upload_tod_instance.connect("change_scene_pressed", self, "_change_to_tod_scene")
+	upload_tod_instance.connect("upload_Button_pressed", self, "_handle_upload_tip")
 	upload_tod_instance.visible = false
 
 
-func change_to_tod_scene():
+func _change_to_tod_scene():
 	print("reacting to close Button from Upload ToD scene")
 	upload_tod_instance.visible = false
 	toD_instance.visible = true
 
 
-func handle_upload_tip(dict):
+func _handle_upload_tip(dict):
 	# Add user tip to database
 	db = SQLite.new()
 	db.path = db_name
@@ -114,13 +130,13 @@ func handle_upload_tip(dict):
 	db.open_db()
 	db.insert_row(tableName, dict)
 	# Update local List of all Tips and change to ToD scene
-	update_List_of_ToDs(dict)
-	change_to_tod_scene()
+	_update_List_of_ToDs(dict)
+	_change_to_tod_scene()
 
 
-func update_List_of_ToDs(dict):
+func _update_List_of_ToDs(dict):
 	# Pushes user tip at the top of the dictionary and resets counter to show first entry
 	toD_instance.tod_list.push_front(dict)
 	toD_instance.counter = 0
-	toD_instance.get_ToD()
-	toD_instance.set_ToD()
+	toD_instance._get_ToD()
+	toD_instance._set_ToD()

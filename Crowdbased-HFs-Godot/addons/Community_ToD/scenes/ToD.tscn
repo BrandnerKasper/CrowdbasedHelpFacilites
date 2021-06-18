@@ -9,24 +9,24 @@
 [ext_resource path="res://addons/Community_ToD/textures/Close_Button_pressed.png" type="Texture" id=7]
 [ext_resource path="res://addons/Community_ToD/textures/Blog_Button.png" type="Texture" id=8]
 [ext_resource path="res://addons/Community_ToD/textures/Video_Button_pressed.png" type="Texture" id=9]
-[ext_resource path="res://addons/Community_ToD/textures/DisLike_Button.png" type="Texture" id=10]
+[ext_resource path="res://addons/Community_ToD/textures/DisLike_Test_02.png" type="Texture" id=10]
 [ext_resource path="res://addons/Community_ToD/textures/outer_Rec.png" type="Texture" id=11]
-[ext_resource path="res://addons/Community_ToD/textures/Like_Button.png" type="Texture" id=12]
-[ext_resource path="res://addons/Community_ToD/textures/Like_Button_hovered.png" type="Texture" id=13]
+[ext_resource path="res://addons/Community_ToD/textures/Like_Test_03.png" type="Texture" id=12]
+[ext_resource path="res://addons/Community_ToD/textures/Like_Test_02.png" type="Texture" id=13]
 [ext_resource path="res://addons/Community_ToD/textures/X_Button_pressed.png" type="Texture" id=14]
 [ext_resource path="res://addons/Community_ToD/textures/Prev_Next_Button.png" type="Texture" id=15]
 [ext_resource path="res://addons/Community_ToD/textures/Close_Button_hovered.png" type="Texture" id=16]
 [ext_resource path="res://addons/Community_ToD/textures/Prev_Next_Button_pressed.png" type="Texture" id=17]
 [ext_resource path="res://addons/Community_ToD/textures/inner_Rec.png" type="Texture" id=18]
-[ext_resource path="res://addons/Community_ToD/textures/DisLike_Button_pressed.png" type="Texture" id=19]
+[ext_resource path="res://addons/Community_ToD/textures/DisLike_Test_01.png" type="Texture" id=19]
 [ext_resource path="res://addons/Community_ToD/textures/Upload_Button_hovered.png" type="Texture" id=20]
 [ext_resource path="res://addons/Community_ToD/textures/X_Button_hovered.png" type="Texture" id=21]
 [ext_resource path="res://addons/Community_ToD/textures/Video_Button.png" type="Texture" id=22]
 [ext_resource path="res://addons/Community_ToD/textures/Close_Button.png" type="Texture" id=23]
 [ext_resource path="res://addons/Community_ToD/textures/X_Button.png" type="Texture" id=24]
-[ext_resource path="res://addons/Community_ToD/textures/DisLike_Button_hovered.png" type="Texture" id=25]
+[ext_resource path="res://addons/Community_ToD/textures/DisLike_Test_03.png" type="Texture" id=25]
 [ext_resource path="res://addons/Community_ToD/textures/Upload_Button.png" type="Texture" id=26]
-[ext_resource path="res://addons/Community_ToD/textures/Like_Button_pressed.png" type="Texture" id=27]
+[ext_resource path="res://addons/Community_ToD/textures/Like_Test_01.png" type="Texture" id=27]
 [ext_resource path="res://addons/Community_ToD/textures/Blog_Button_hovered.png" type="Texture" id=28]
 [ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD_Body_Text.tres" type="DynamicFont" id=29]
 [ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD-Button.tres" type="DynamicFont" id=30]
@@ -184,7 +184,7 @@ margin_right = 985.0
 margin_bottom = 23.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
-text = "01.01.1990 (Godot Version: 3.3.2)"
+text = "01.01.1990 (Version 3.3.2)"
 align = 1
 
 [node name="Text_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
@@ -370,8 +370,8 @@ size_flags_horizontal = 3
 [node name="Like_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/Like_M/Like_C"]
 margin_right = 53.0
 margin_bottom = 55.0
-texture_normal = ExtResource( 12 )
-texture_pressed = ExtResource( 27 )
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 13 )
 texture_disabled = ExtResource( 1 )
 
@@ -387,7 +387,7 @@ margin_top = 9.0
 margin_right = 80.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 30 )
-custom_colors/font_color = Color( 0.27451, 0.992157, 0.517647, 1 )
+custom_colors/font_color = Color( 0.831373, 0.831373, 0.831373, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "8900"
 
@@ -407,9 +407,9 @@ size_flags_horizontal = 3
 [node name="DisLike_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
 margin_right = 54.0
 margin_bottom = 55.0
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 19 )
-texture_hover = ExtResource( 25 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 25 )
+texture_hover = ExtResource( 10 )
 texture_disabled = ExtResource( 32 )
 
 [node name="C_D" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/Down_C/Like_DisLike_M/Like_DisLike_C/DisLike_M/DisLike_C"]
@@ -424,7 +424,7 @@ margin_top = 9.0
 margin_right = 72.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 30 )
-custom_colors/font_color = Color( 0.909804, 0.541176, 0.270588, 1 )
+custom_colors/font_color = Color( 0.831373, 0.831373, 0.831373, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "310"
 

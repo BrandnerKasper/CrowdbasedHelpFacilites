@@ -57,8 +57,7 @@ func _on_Upload_Button_pressed():
 	print("Upload Button pressed")
 	if(check_ToD()):
 		print("Uploading ToD...")
-		#commit_Data_to_DB()
-		init_user_tip()
+		_init_user_tip()
 		emit_signal("upload_Button_pressed", user_tip)
 	else:
 		printerr("Please fill in all required fields.")
@@ -84,7 +83,8 @@ func check_ToD():
 		return false
 	return true
 
-func init_user_tip():
+
+func _init_user_tip():
 	user_tip["Title"] = title
 	user_tip["Body_Text"] = body_text
 	user_tip["Blog_URL"] = blog_url
