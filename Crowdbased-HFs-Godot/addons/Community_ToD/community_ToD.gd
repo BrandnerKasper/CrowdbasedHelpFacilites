@@ -6,11 +6,13 @@ extends EditorPlugin
 # Scenes and Icon constants
 const ToD = preload("res://addons/Community_ToD/scenes/ToD.tscn")
 const Upload_ToD = preload("res://addons/Community_ToD/scenes/Upload_ToD.tscn")
+const Confirm_ToD = preload("res://addons/Community_ToD/scenes/Confirm_ToD.tscn")
 const Icon = preload("res://addons/Community_ToD/cloud.svg")
 
 # Instances for Main Screen
 var toD_instance
 var upload_tod_instance
+var confirm_tod_instance
 var community_ToD_Viewport
 
 # SQLite Database
@@ -22,6 +24,7 @@ var db_name = "res://data/Community_ToD"
 func _enter_tree():
 	call_deferred("_init_ToD")
 	call_deferred("_init_Upload_ToD")
+	call_deferred("_init_Confirm_ToD")
 	
 	make_visible(false)
 
@@ -31,6 +34,8 @@ func _exit_tree():
 		toD_instance.queue_free()
 	if upload_tod_instance:
 		upload_tod_instance.queue_free()
+	if confirm_tod_instance:
+		confirm_tod_instance.queue_free()
 
 
 func has_main_screen():
@@ -43,6 +48,8 @@ func make_visible(visible):
 		toD_instance.visible = visible
 	if upload_tod_instance:
 		upload_tod_instance.visible = false
+	if confirm_tod_instance:
+		confirm_tod_instance.visible = false
 
 
 func get_plugin_name():
@@ -120,18 +127,55 @@ func _change_to_tod_scene():
 	print("reacting to close Button from Upload ToD scene")
 	upload_tod_instance.visible = false
 	toD_instance.visible = true
+	
+	# Reset Edits of Upload
+	upload_tod_instance._reset_all_Edits()
 
 
 func _handle_upload_tip(dict):
+	confirm_tod_instance.tod = dict
+	confirm_tod_instance._set_Confirm_ToD()
+	
+	# Change scene to confirm tod scene
+	upload_tod_instance.visible = false
+	confirm_tod_instance.visible = true
+
+
+# Code logic for Confirm Tip of the Day scene
+func _init_Confirm_ToD():
+	# Set screen
+	confirm_tod_instance = Confirm_ToD.instance()
+	community_ToD_Viewport = get_editor_interface().get_editor_viewport().add_child(confirm_tod_instance)
+	
+	# Set logic for Confirm Tip of the Day scene
+	confirm_tod_instance.connect("change_scene_pressed", self, "_change_to_upload_tod_scene")
+	confirm_tod_instance.connect("confirm_Button_pressed", self, "_handle_confirm_tip")
+	confirm_tod_instance.visible = false
+
+
+func _change_to_upload_tod_scene():
+	print("reacting to close Button from Confirm ToD scene")
+	confirm_tod_instance.visible = false
+	upload_tod_instance.visible = true
+
+
+func _handle_confirm_tip(dict):
 	# Add user tip to database
 	db = SQLite.new()
 	db.path = db_name
 	var tableName = "ToD"
 	db.open_db()
 	db.insert_row(tableName, dict)
+	
 	# Update local List of all Tips and change to ToD scene
 	_update_List_of_ToDs(dict)
-	_change_to_tod_scene()
+	
+	# Change scene
+	confirm_tod_instance.visible = false
+	toD_instance.visible = true
+	
+	# Reset Edits of Upload
+	upload_tod_instance._reset_all_Edits()
 
 
 func _update_List_of_ToDs(dict):

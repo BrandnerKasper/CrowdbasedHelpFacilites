@@ -1,0 +1,344 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD_Title-Text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://addons/Community_ToD/textures/Video_Button_hovered.png" type="Texture" id=2]
+[ext_resource path="res://addons/Community_ToD/textures/Blog_Button.png" type="Texture" id=3]
+[ext_resource path="res://addons/Community_ToD/textures/Blog_Button_pressed.png" type="Texture" id=4]
+[ext_resource path="res://addons/Community_ToD/textures/Video_Button_pressed.png" type="Texture" id=5]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button_pressed.png" type="Texture" id=6]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button_pressed.png" type="Texture" id=7]
+[ext_resource path="res://addons/Community_ToD/textures/Video_Button.png" type="Texture" id=8]
+[ext_resource path="res://addons/Community_ToD/scripts/Confirm_ToD.gd" type="Script" id=9]
+[ext_resource path="res://addons/Community_ToD/fonts/Open_Sans/OpenSans-SemiBold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://addons/Community_ToD/textures/outer_Rec.png" type="Texture" id=11]
+[ext_resource path="res://addons/Community_ToD/textures/Blog_Button_hovered.png" type="Texture" id=12]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button_pressed.png" type="Texture" id=14]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button_hovered.png" type="Texture" id=16]
+[ext_resource path="res://addons/Community_ToD/textures/inner_Rec.png" type="Texture" id=18]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button_hovered.png" type="Texture" id=20]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button_hovered.png" type="Texture" id=21]
+[ext_resource path="res://addons/Community_ToD/textures/Close_Button.png" type="Texture" id=23]
+[ext_resource path="res://addons/Community_ToD/textures/X_Button.png" type="Texture" id=24]
+[ext_resource path="res://addons/Community_ToD/textures/Upload_Button.png" type="Texture" id=26]
+[ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD_Body_Text.tres" type="DynamicFont" id=29]
+[ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD-Button.tres" type="DynamicFont" id=30]
+
+[sub_resource type="StyleBoxLine" id=1]
+color = Color( 0.862745, 0.862745, 0.862745, 1 )
+thickness = 2
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 10 )
+
+[node name="Confirm_ToD" type="Control"]
+margin_left = 960.0
+margin_top = 539.0
+margin_right = 960.0
+margin_bottom = 539.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Outer_Rect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -518.5
+margin_top = -292.5
+margin_right = 518.5
+margin_bottom = 292.5
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Top_C" type="CenterContainer" parent="Outer_Rect"]
+margin_right = 1036.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToD_L" type="Label" parent="Outer_Rect/Top_C"]
+margin_left = 378.0
+margin_top = 7.0
+margin_right = 658.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Tip of the Day Preview"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X_M" type="MarginContainer" parent="Outer_Rect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -50.0
+margin_bottom = 50.0
+custom_constants/margin_top = 14
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X_Button" type="TextureButton" parent="Outer_Rect/X_M"]
+margin_top = 14.0
+margin_right = 50.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 24 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inner_Rect" type="NinePatchRect" parent="Outer_Rect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -492.5
+margin_top = -241.5
+margin_right = 498.5
+margin_bottom = 268.5
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inner_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect"]
+margin_right = 993.0
+margin_bottom = 507.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Body_C" type="VBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M"]
+margin_left = 50.0
+margin_top = 5.0
+margin_right = 988.0
+margin_bottom = 502.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title_C" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_right = 938.0
+margin_bottom = 45.0
+
+[node name="Title" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C"]
+margin_left = 350.0
+margin_right = 588.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Very high Score"
+
+[node name="Seperator_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_top = 49.0
+margin_right = 938.0
+margin_bottom = 53.0
+custom_constants/margin_right = 40
+custom_constants/margin_left = 40
+
+[node name="Title_Line" type="HSeparator" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Seperator_M"]
+margin_left = 40.0
+margin_right = 898.0
+margin_bottom = 4.0
+size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date_Version_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_top = 57.0
+margin_right = 938.0
+margin_bottom = 80.0
+
+[node name="Date_Version_L" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Date_Version_M"]
+margin_right = 938.0
+margin_bottom = 23.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+text = "01.01.1990 (Version 3.3.2)"
+align = 1
+
+[node name="Text_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_top = 84.0
+margin_right = 938.0
+margin_bottom = 428.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
+margin_right = 224.0
+margin_bottom = 344.0
+custom_constants/margin_right = 50
+custom_constants/margin_left = 80
+
+[node name="Button_C" type="VBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M"]
+margin_left = 80.0
+margin_right = 174.0
+margin_bottom = 344.0
+
+[node name="Block_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
+margin_right = 94.0
+margin_bottom = 163.0
+custom_constants/margin_top = 40
+custom_constants/margin_bottom = 30
+
+[node name="Block_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M"]
+margin_top = 40.0
+margin_right = 94.0
+margin_bottom = 133.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 12 )
+
+[node name="Video_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C"]
+margin_top = 167.0
+margin_right = 94.0
+margin_bottom = 261.0
+custom_constants/margin_top = 30
+
+[node name="Video_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M"]
+margin_top = 30.0
+margin_right = 94.0
+margin_bottom = 94.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 2 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C"]
+margin_left = 228.0
+margin_right = 938.0
+margin_bottom = 344.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Text_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer"]
+margin_right = 710.0
+margin_bottom = 344.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 15
+
+[node name="Text" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/ScrollContainer/Text_M"]
+margin_top = 130.0
+margin_right = 710.0
+margin_bottom = 229.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Just a test to see if the ranking algo sorts this tip to the top!
+
+link is a unix time calculator, pretty lit :D"
+autowrap = true
+
+[node name="Down_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C"]
+margin_top = 432.0
+margin_right = 938.0
+margin_bottom = 497.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 5
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+
+[node name="CenterContainer" type="CenterContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M"]
+margin_left = 20.0
+margin_top = 5.0
+margin_right = 918.0
+margin_bottom = 55.0
+
+[node name="Up_Cl_C" type="HBoxContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer"]
+margin_left = 247.0
+margin_right = 651.0
+margin_bottom = 50.0
+
+[node name="Up_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C"]
+margin_right = 225.0
+margin_bottom = 50.0
+custom_constants/margin_right = 100
+
+[node name="Confirm_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M"]
+margin_right = 125.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 26 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 20 )
+
+[node name="Confirm" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M/Confirm_Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -63.9142
+margin_top = -27.5
+margin_right = 62.0858
+margin_bottom = 23.5
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.992157, 0.992157, 0.992157, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Confirm"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close_M" type="MarginContainer" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C"]
+margin_left = 229.0
+margin_right = 404.0
+margin_bottom = 50.0
+custom_constants/margin_left = 50
+
+[node name="Close_Button" type="TextureButton" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M"]
+margin_left = 50.0
+margin_right = 175.0
+margin_bottom = 50.0
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 16 )
+
+[node name="Close" type="Label" parent="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M/Close_Button"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.0281
+margin_top = -28.4439
+margin_right = 62.9719
+margin_bottom = 21.5561
+custom_fonts/font = ExtResource( 30 )
+custom_colors/font_color = Color( 0.984314, 0.984314, 0.984314, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Outer_Rect/X_M/X_Button" to="." method="_on_X_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Block_M/Block_Button" to="." method="_on_Block_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Text_C/Button_M/Button_C/Video_M/Video_Button" to="." method="_on_Video_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Up_M/Confirm_Button" to="." method="_on_Confirm_Button_pressed"]
+[connection signal="pressed" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Down_M/CenterContainer/Up_Cl_C/Close_M/Close_Button" to="." method="_on_Close_Button_pressed"]

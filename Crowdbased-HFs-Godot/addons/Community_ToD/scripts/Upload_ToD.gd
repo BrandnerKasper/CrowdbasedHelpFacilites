@@ -51,6 +51,11 @@ func _on_Video_URL_Edit_focus_exited():
 	video_url = $Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_T_E/Video_URL_Edit.text
 	print("Video URL entered: " + video_url)
 
+func _reset_all_Edits():
+	$Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit.text = ""
+	$Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt/Description_Edit.text = ""
+	$Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E/Blog_URL_Edit.text = ""
+	$Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_V/HBoxContainer/V_T_E/Video_URL_Edit.text = ""
 
 # Buttons:
 func _on_Upload_Button_pressed():
