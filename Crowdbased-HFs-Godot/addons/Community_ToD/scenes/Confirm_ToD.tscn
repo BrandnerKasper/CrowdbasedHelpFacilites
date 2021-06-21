@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://addons/Community_ToD/fonts/Dynamic_Font/ToD_Title-Text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://addons/Community_ToD/textures/Video_Button_hovered.png" type="Texture" id=2]
@@ -28,6 +28,10 @@ color = Color( 0.862745, 0.862745, 0.862745, 1 )
 thickness = 2
 
 [sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 252
 font_data = ExtResource( 10 )
 
 [node name="Confirm_ToD" type="Control"]
@@ -331,6 +335,24 @@ custom_fonts/font = ExtResource( 30 )
 custom_colors/font_color = Color( 0.984314, 0.984314, 0.984314, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Close"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Preview" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -518.0
+margin_top = -290.0
+margin_right = 518.0
+margin_bottom = 291.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.862745, 0.862745, 0.862745, 0.313726 )
+text = "Preview"
 align = 1
 valign = 1
 __meta__ = {

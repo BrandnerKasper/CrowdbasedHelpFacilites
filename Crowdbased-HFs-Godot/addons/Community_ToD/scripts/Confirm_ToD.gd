@@ -20,6 +20,10 @@ func _set_Confirm_ToD():
 	_set_Video_URL(tod["Video_URL"])
 
 
+func _reset_Confirm_ToD():
+	pass
+
+
 # Set ToD variables
 func _set_Title(title : String):
 	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C/Title".text = title
