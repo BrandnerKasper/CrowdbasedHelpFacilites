@@ -422,8 +422,10 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Outer_Rect/X_M/X_Button" to="." method="_on_X_Button_pressed"]
+[connection signal="focus_entered" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit" to="." method="_on_Title_Edit_focus_entered"]
 [connection signal="focus_exited" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit" to="." method="_on_Title_Edit_focus_exited"]
 [connection signal="text_entered" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Title_C/M_T_E/Title_Edit" to="." method="_on_Title_Edit_text_entered"]
+[connection signal="focus_entered" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt/Description_Edit" to="." method="_on_Description_Edit_focus_entered"]
 [connection signal="focus_exited" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/Description_C/M_Txt/Description_Edit" to="." method="_on_Description_Edit_focus_exited"]
 [connection signal="focus_exited" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E/Blog_URL_Edit" to="." method="_on_Blog_URL_Edit_focus_exited"]
 [connection signal="text_entered" from="Outer_Rect/Inner_Rect/Inner_M/Body_C/Upload_C/M_B/Blog_URL_C/B_T_E/Blog_URL_Edit" to="." method="_on_Blog_URL_Edit_text_entered"]
