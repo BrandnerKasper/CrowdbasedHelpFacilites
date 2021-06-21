@@ -31,7 +31,7 @@ func _ready():
 # Handle Line/Text Edits:
 # Title Edit
 func _on_Title_Edit_focus_entered():
-	if !title_edit.text.empty():
+	if title_edit.text == "Please enter a Title!":
 		print("Title Warning empty")
 		title_edit.add_color_override("font_color", normal_text_color)
 		title_edit.text = ""
@@ -49,7 +49,7 @@ func _on_Title_Edit_focus_exited():
 
 # Description Edit
 func _on_Description_Edit_focus_entered():
-	if !description_edit.text.empty():
+	if description_edit.text == "Please enter a Description!":
 		print("Description Warning empty")
 		description_edit.add_color_override("font_color", normal_text_color)
 		description_edit.text = ""
