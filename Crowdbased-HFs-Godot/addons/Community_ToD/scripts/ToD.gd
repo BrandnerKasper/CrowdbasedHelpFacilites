@@ -87,6 +87,7 @@ func _get_ToD():
 
 
 func _set_ToD():
+	_set_ToD_Count()
 	_set_Title(tod["Title"])
 	_set_Date_Version(tod["Unix_Timestamp"], tod["Engine_Version"])
 	_set_Body_Text(tod["Body_Text"])
@@ -103,6 +104,10 @@ func _init_rated_comment_List():
 
 
 # Set ToD variables
+func _set_ToD_Count():
+	$Outer_Rect/Top_C/ToD_L.text = "Community Tip of the Day " + "(" + str(counter + 1) + "/" + str(tod_list.size()) + ")"
+
+
 func _set_Title(title : String):
 	$"Outer_Rect/Inner_Rect/Inner_M/Body_C/Title_C/Title".text = title
 
