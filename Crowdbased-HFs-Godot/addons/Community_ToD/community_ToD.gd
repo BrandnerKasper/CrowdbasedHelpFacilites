@@ -80,7 +80,7 @@ func _init_List_of_ToDs():
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	db.query("SELECT ToD.ToD_ID as ToD_ID, ToD.Title as Title, ToD.Body_Text as Body_Text, ToD.Blog_URL as Blog_URL, " +  
+	db.query("SELECT ToD.Title as Title, ToD.Body_Text as Body_Text, ToD.Blog_URL as Blog_URL, " +  
 				"ToD.Video_URL as Video_URL, ToD.Like_Count as Like_Count, ToD.DisLike_Count as DisLike_Count, " + 
 				"ToD.Unix_Timestamp as Unix_Timestamp, ToD.Engine_Version as Engine_Version from ToD")
 	return db.query_result
@@ -97,18 +97,18 @@ func _close_ToD():
 	get_editor_interface().set_plugin_enabled("Community_ToD", false) 
 
 
-func _handle_like_pressed(vote, id):
+func _handle_like_pressed(vote, title):
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	db.query("UPDATE ToD SET Like_Count = Like_Count + " + str(vote) + " WHERE ToD_ID = " + str(id))
+	db.query("UPDATE ToD SET Like_Count = Like_Count + " + str(vote) + " WHERE Title = " + "\"" + title + "\"")
 
 
-func _handle_dislike_pressed(vote, id):
+func _handle_dislike_pressed(vote, title):
 	db = SQLite.new()
 	db.path = db_name
 	db.open_db()
-	db.query("UPDATE ToD SET DisLike_Count = DisLike_Count + " + str(vote) + " WHERE ToD_ID = " + str(id))
+	db.query("UPDATE ToD SET DisLike_Count = DisLike_Count + " + str(vote) + " WHERE Title = " + "\"" + title + "\"")
 
 
 # Code logic for Upload Tip of the Day scene
@@ -179,8 +179,13 @@ func _handle_confirm_tip(dict):
 
 
 func _update_List_of_ToDs(dict):
-	# Pushes user tip at the top of the dictionary and resets counter to show first entry
-	toD_instance.tod_list.push_front(dict)
-	toD_instance.counter = 0
+	# Pushes user tip at the end of the array and sets counter to show last entry
+	toD_instance.tod_list.append(dict)
+	# add a local reference
+	var ref = { "Like": false, "DisLike": false}
+	toD_instance.rated_comments.append(ref)
+	toD_instance.counter = toD_instance.tod_list.size() -1
+	# TODO: fix last tip is shown twice when multiple tips are uploaded
+	toD_instance._check_Like_DisLike()
 	toD_instance._get_ToD()
 	toD_instance._set_ToD()

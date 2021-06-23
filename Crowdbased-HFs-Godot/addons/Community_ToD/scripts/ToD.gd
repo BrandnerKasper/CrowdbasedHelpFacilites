@@ -8,8 +8,8 @@ signal upload_button_pressed
 signal close_pressed
 
 # Updates Like and DisLike Count
-signal like_pressed(vote, id)
-signal dislike_pressed(vote, id)
+signal like_pressed(vote, title)
+signal dislike_pressed(vote, title)
 
 # Community ToD variables
 var tod_list : Array
@@ -216,7 +216,7 @@ func _on_Like_Button_pressed():
 		# Handle Optic
 		_change_Button_and_Label(like_button, like_normal_texture, like_count_label, grey_color)
 		# Handle logic
-		emit_signal("like_pressed", -1, tod_list[counter]["ToD_ID"])
+		emit_signal("like_pressed", -1, tod_list[counter]["Title"])
 		tod_list[counter]["Like_Count"] -= 1
 		rated_comments[counter]["Like"] = false 
 		like_pressed = false
@@ -224,19 +224,18 @@ func _on_Like_Button_pressed():
 		# Handle Optic
 		_change_Button_and_Label(like_button, like_pressed_texture, like_count_label, like_color)
 		# Handle logic
-		emit_signal("like_pressed", 1, tod_list[counter]["ToD_ID"])
+		emit_signal("like_pressed", 1, tod_list[counter]["Title"])
 		tod_list[counter]["Like_Count"] += 1
 		like_pressed = true
 		rated_comments[counter]["Like"] = true 
 		# Handle Like pressed deactivating DisLike
 		if dislike_pressed:
 			_change_Button_and_Label(dislike_button, dislike_normal_texture, dislike_count_label, grey_color)
-			emit_signal("dislike_pressed", -1, tod_list[counter]["ToD_ID"])
+			emit_signal("dislike_pressed", -1, tod_list[counter]["Title"])
 			tod_list[counter]["DisLike_Count"] -= 1
 			rated_comments[counter]["DisLike"] = false 
 			dislike_pressed = false
-
-	print("rated comments Like: " + str(rated_comments[counter]["Like"]) + "DisLike: " + str(rated_comments[counter]["DisLike"]))
+	
 	_update_ToD()
 
 
@@ -246,7 +245,7 @@ func _on_DisLike_Button_pressed():
 		# Handle Optic
 		_change_Button_and_Label(dislike_button, dislike_normal_texture, dislike_count_label, grey_color)
 		# Handle logic
-		emit_signal("dislike_pressed", -1, tod_list[counter]["ToD_ID"])
+		emit_signal("dislike_pressed", -1, tod_list[counter]["Title"])
 		tod_list[counter]["DisLike_Count"] -= 1
 		rated_comments[counter]["DisLike"] = false 
 		dislike_pressed = false
@@ -254,19 +253,18 @@ func _on_DisLike_Button_pressed():
 		# Handle Optic
 		_change_Button_and_Label(dislike_button, dislike_pressed_texture, dislike_count_label, dislike_color)
 		# Handle logic
-		emit_signal("dislike_pressed", 1, tod_list[counter]["ToD_ID"])
+		emit_signal("dislike_pressed", 1, tod_list[counter]["Title"])
 		tod_list[counter]["DisLike_Count"] += 1
 		rated_comments[counter]["DisLike"] = true
 		dislike_pressed = true
 		# Handle DisLike pressed deactivates Like
 		if like_pressed:
 			_change_Button_and_Label(like_button, like_normal_texture, like_count_label, grey_color)
-			emit_signal("like_pressed", -1, tod_list[counter]["ToD_ID"])
+			emit_signal("like_pressed", -1, tod_list[counter]["Title"])
 			tod_list[counter]["Like_Count"] -= 1
 			rated_comments[counter]["Like"] = false 
 			like_pressed = false
-
-	print("rated comments Like: " + str(rated_comments[counter]["Like"]) + "DisLike: " + str(rated_comments[counter]["DisLike"]))
+	
 	_update_ToD()
 
 
