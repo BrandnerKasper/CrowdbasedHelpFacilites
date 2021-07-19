@@ -29,5 +29,4 @@ enabled=PoolStringArray( "res://addons/Community_ToD/plugin.cfg", "res://addons/
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"
