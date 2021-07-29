@@ -23,12 +23,14 @@ A ToD is typically a Pop-Up window displayed when the software starts. It contai
 # Implementation
 Both ideas are implemented in the [Godot Engine](https://godotengine.org/) as an Editor Plugin.
 
-TEST video
-<!-- blank line -->
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="Documentation/ToolTip_Prototype_w_C.png">
-    <source src="Documentation/videos/Enhanced_Tool-Tip_Gif_2.mp4" type="video/mp4">
-  </video>
-</figure>
-<!-- blank line -->
+TEST video Enhanced Tool-Tip
+
+
+https://user-images.githubusercontent.com/58075579/127537595-ab79da45-d718-4830-9736-8a90ca51b551.mp4
+
+
+Test video Community Tip of the Day
+
+
+https://user-images.githubusercontent.com/58075579/127538182-45076cab-51a9-413f-8da9-8273ac9a2000.mp4
 
