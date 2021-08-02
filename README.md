@@ -15,7 +15,9 @@ Here is a UI Mockup.
 
 A Tool-Tip is a tip that appears inside a Pop-Up window, while a user hovers over an UI object. It contains a short description of the element and disappears when the cursor leaves the object’s space. The Enhanced Tool-Tip is an enhanced version of a Tool-Tip. It appears while hoverin gover a game object. It contains the name of the object, a short description and multiple buttons. The blog and the video buttons lead to additional information sources, when pressed and the like and the dislike buttons enable the user to rate the tip. The Enhanced Tool-Tip generates a database entry, when created. This entry saves and updates the rating.
 
-https://user-images.githubusercontent.com/58075579/127537595-ab79da45-d718-4830-9736-8a90ca51b551.mp4
+
+https://user-images.githubusercontent.com/58075579/127863763-4250ad85-1e77-4fa0-8ef9-0f4f1172132d.mp4
+
 
 # Custom Node Plugin
 
