@@ -41,3 +41,7 @@ https://user-images.githubusercontent.com/58075579/127538182-45076cab-51a9-413f-
 
 The Community ToD was implemented as a Main Screen plugin, a subtype of an Editor-plugin. This kind of plugin extends the editors interface and allows to create new UIs in the [central part of the editor](https://docs.godotengine.org/en/stable/tutorials/plugins/editor/making_main_screen_plugins.html).
 A ‘Community ToD‘ tab is added and appears next to the default ‘2D‘, ‘3D‘, ‘Script‘ and ‘AssetLib‘ tabs. When the ‘Community ToD‘ tab is selected, it displays the Tip scene. This newly added tab works just like the other Main Screens. It can be easily switched between. these tabs. Pressing the ‘X‘ or ‘Close‘ button in the Tip scene disables the plugin, therefore hiding the tab.
+
+# ToDo:
+
+Change SQLite and put database file to a global server.
