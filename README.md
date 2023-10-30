@@ -3,6 +3,11 @@
 # Abstract
 This repository explores Crowdbased Help Facilites in the Godot Engine. More concrete I explore two ideas: An Enhanced Tool-Tip and a Crowdbased Tip of the Day (ToD). Both ideas are implemented in the [Godot Engine](https://godotengine.org/) as an Editor Plugin.
 
+# Publication
+
+This work was published at IMET - International Conference on Interactive Media, Smart Systems and Emerging Technologies (2023) under the title [Investigating Crowdsourced Help Facilities for Enhancing
+User Guidance](https://diglib.eg.org/xmlui/bitstream/handle/10.2312/imet20231252/027-030.pdf?sequence=1&isAllowed=y).
+
 # Enhanced Tool-Tip
 
 A Tool-Tip normally consists of a short description of a item the user is hovering over. I enhance the Tool-Tip to reference additional information, like a blogpost or a video, as well as a rating system to further manage and improve the tool.
